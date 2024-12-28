@@ -160,7 +160,7 @@ elif [ runPackage = net.atlasclient.atlaspe ]; then
      echo "├>[ Actived Atlas Client Tuning ]"
      sleep 0.5
 else 
-   
+    echo "├>[ Runpackage not supported ]"
 fi
 
 #// cmd By Reii
