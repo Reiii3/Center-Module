@@ -121,7 +121,6 @@ if [ ${runPackage} = ${runPackage2} ]; then
       echo 
       echo "| -Have a nice play- |"
       echo "|      -enjoy-       |"
-	    xtorm $core
   fi
 
 else
@@ -159,7 +158,7 @@ elif [ ${runPackage} = net.atlasclient.atlaspe ]; then
      echo "├>[ Actived Atlas Client Tuning ]"
      sleep 0.5
 else 
-    echo "├>[ Runpackage not supported ]"
+    echo "├>[ Denied MCPE ]"
 fi
 
 #// cmd By Reii
