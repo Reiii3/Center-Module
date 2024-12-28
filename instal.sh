@@ -44,6 +44,7 @@ elif [ ${runPackage} = net.atlasclient.atlaspe ]; then
   echo "${wr}█▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█
 ██─█▄█─██─███▀██─▄▄▄██─▄█▀█
 ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
+fi
 
 usefl=false
 	
