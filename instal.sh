@@ -37,14 +37,14 @@ sleep 1
 
 if [ ${runPackage} = com.mojang.minecraftpe ]; then
   echo "                       Special Edition"
-  echo "${wr}           █▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█${nwr}"
-  echo "${wr}           ██─█▄█─██─███▀██─▄▄▄██─▄█▀█${nwr}"
-  echo "${wr}           ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
+  echo "${wr}               █▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█${nwr}"
+  echo "${wr}               ██─█▄█─██─███▀██─▄▄▄██─▄█▀█${nwr}"
+  echo "${wr}               ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
 elif [ ${runPackage} = net.atlasclient.atlaspe ]; then
   echo "                       Special Edition"
-  echo "${wr}           █▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█${nwr}"
-  echo "${wr}           ██─█▄█─██─███▀██─▄▄▄██─▄█▀█${nwr}"
-  echo "${wr}           ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
+  echo "${wr}               █▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█${nwr}"
+  echo "${wr}               ██─█▄█─██─███▀██─▄▄▄██─▄█▀█${nwr}"
+  echo "${wr}               ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
 fi
 
 usefl=false
