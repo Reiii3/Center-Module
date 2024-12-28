@@ -35,6 +35,15 @@ sleep 1
 echo
 sleep 1
 
+if [ ${runPackage} = com.mojang.minecraftpe ]; then
+  echo "${wr}
+█▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█
+██─█▄█─██─███▀██─▄▄▄██─▄█▀█
+▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
+elif [ ${runPackage} = net.atlasclient.atlaspe ]; then
+  echo "${wr}█▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█
+██─█▄█─██─███▀██─▄▄▄██─▄█▀█
+▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
 
 usefl=false
 	
