@@ -136,7 +136,6 @@ else
    echo "        ∥ Special Fetures MCPE Tuner By Mojang ∥"
   fi
   echo 
- cmd package compile -m speed -f ${runPackage} > /dev/null 2>&1
 
 case $1 in
        "--collingmod")
