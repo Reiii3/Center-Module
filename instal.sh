@@ -150,7 +150,7 @@ case $1 in
             ;;
 esac
 
-if [ ${runPackage =} com.mojang.minecraftpe ]; then
+if [ ${runPackage} = com.mojang.minecraftpe ]; then
    
      echo "├>[ Actived Minecraft Tuning ]"
      sleep 0.5
