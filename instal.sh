@@ -195,6 +195,6 @@ if [ $usefl = true ]; then
       echo 
       echo "| -Have a nice play- |"
       echo "|      -enjoy-       |"
-	    xtorm $core
+	    
   fi
 fi
