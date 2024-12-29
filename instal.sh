@@ -92,7 +92,7 @@ fi
 if [ ${runPackage} = ${runPackage2} ]; then
   echo "───────────────────────────────────────────────────────"
   sleep 0.5
-  echo "          ∥  All features have been activated  ∥"
+  echo "           ∥  All features have been activated  ∥"
   if [ ${runPackage2} = "com.mojang.minecraftpe" ]; then
    echo "        ∥  Special Fetures MCPE Tuner By Mojang  ∥"
   elif [ ${runPackage2} = "net.atlasclient.atlaspe" ]; then
