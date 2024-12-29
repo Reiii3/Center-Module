@@ -96,7 +96,7 @@ if [ ${runPackage} = ${runPackage2} ]; then
   if [ ${runPackage2} = "com.mojang.minecraftpe" ]; then
    echo "        ∥  Special Fetures MCPE Tuner By Mojang  ∥"
   elif [ ${runPackage2} = "net.atlasclient.atlaspe" ]; then
-   echo "         ∥  Special Fetures MCPE Tuner By Mojang  ∥"
+   echo "        ∥  Special Fetures MCPE Tuner By Mojang  ∥"
   fi
   echo
   sleep 0.5
