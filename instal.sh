@@ -36,14 +36,14 @@ echo
 sleep 1
 
 if [ ${runPackage} = com.mojang.minecraftpe ]; then
-  echo "                     Special Edition"
+  echo "                     >>Special Edition<<"
   echo
   echo "${wr}               █▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█${nwr}"
   echo "${wr}               ██─█▄█─██─███▀██─▄▄▄██─▄█▀█${nwr}"
   echo "${wr}               ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
   echo
 elif [ ${runPackage} = net.atlasclient.atlaspe ]; then
-  echo "                     Special Edition"
+  echo "                     >>Special Edition<<"
   echo
   echo "${wr}               █▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█${nwr}"
   echo "${wr}               ██─█▄█─██─███▀██─▄▄▄██─▄█▀█${nwr}"
