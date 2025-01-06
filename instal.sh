@@ -54,7 +54,7 @@ else
    if [ -z ${runPackage2} ]
     echo "Add Game         : [${runPackage}]"
     sleep 0.5
-     else 
+   else 
     echo "Remove Game      : [${runPackage2}]"
     sleep 0.5
     echo "Add Game        : [${runPackage}]"
