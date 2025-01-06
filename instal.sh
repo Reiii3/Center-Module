@@ -60,7 +60,7 @@ else
     echo "Add Game         : [${runPackage}]"
    fi
 fi
-if
+
 if [ -n "$1" ] && [ "$1" == "-fl" ]; then
 	usefl=true
 	shift
