@@ -51,7 +51,7 @@ if [ ${runPackage2} = ${runPackage} ]; then
     echo "Game Detected    : [${runPackage}]"
     sleep 0.5
 else
-   if [ -z ${runPackage2} ]
+   if [ -z ${runPackage2} ]; then
     echo "Add Game         : [${runPackage}]"
     sleep 0.5
    else 
