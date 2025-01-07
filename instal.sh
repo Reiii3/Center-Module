@@ -203,7 +203,7 @@ if [ $usefl = true ]; then
       sleep 0.5
 	    flaunch $runPackage
   else
-      echo "└>[${runPackage}] Open To Menu Laxeron📳 "
+      echo "└>[ Open To Menu Laxeron📳 ]"
       sleep 0.5
       echo
       echo "───────────────────────────────────────────────────────"
