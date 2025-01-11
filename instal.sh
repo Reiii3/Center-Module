@@ -67,7 +67,7 @@ if [ -n "$1" ] && [ "$1" == "-fl" ]; then
 fi
 
 case $1 in 
-     "--OpenGL" | --OpenGL)
+     "--OpenGL" | *)
      renderer=opengl
      ;;
      "--Vulkan" | --Vulkan)
@@ -78,6 +78,12 @@ case $1 in
      ;;
      "--SkiaVk" | --SkiaVk)
      renderer=skiavk
+     ;;
+     "--SkiaGl Thred" | --SkiaGlTR)
+     renderer=skiaglthreaded
+     ;;
+     "--SkiaVk Thred" | --SkiaVkTR
+     renderer=skiavkthreaded
      ;;
 esac
 echo "Render Selection : [${renderer}]"
