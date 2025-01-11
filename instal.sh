@@ -87,8 +87,29 @@ case $1 in
         ;;
 esac
 echo "Render Selection : [${renderer}]"
-echo
 sleep 0.5
+
+case $1 in 
+    "--OpenGL" | --OpenGL)
+        renderer2=opengl
+        ;;
+    "--Vulkan" | --Vulkan)
+        renderer2=vulkan
+        ;;
+    "--SkiaGl" | --SkiaGl)
+        renderer2=skiagl
+        ;;
+    "--SkiaVk" | --SkiaVk)
+        renderer2=skiavk
+        ;;
+    "--SkiaGl Thread" | *)
+        renderer2=skiaglthreaded
+        ;;
+    "--SkiaVk Thread" | --SkiaVkTR)
+        renderer2=skiavkthreaded
+        ;;
+esac
+echo "Render Backend   : [${renderer2}"
 
 if [ ${runPackage} = "com.mojang.minecraftpe" ]; then
   echo "                    >>Special Edition<<"
