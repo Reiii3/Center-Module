@@ -109,7 +109,9 @@ case $1 in
         renderer2=skiavkthreaded
         ;;
 esac
-echo "Render Backend   : [${renderer2}"
+echo "Render Backend   : [${renderer2}]"
+sleep 0.5
+echo
 
 if [ ${runPackage} = "com.mojang.minecraftpe" ]; then
   echo "                    >>Special Edition<<"
