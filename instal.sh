@@ -118,8 +118,8 @@ case $1 in
         renderer2=skiaglthreaded
         ;;
 esac
-echo "Render Backend   : [${renderer2}]"
-echoecho "└═════════════════════════════════┘"
+echo " Render Backend   : [${renderer2}]"
+echo"└═════════════════════════════════┘"
 sleep 0.5
 echo
 
