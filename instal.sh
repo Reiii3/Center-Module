@@ -86,7 +86,7 @@ case $1 in
         renderer=skiavkthreaded
         ;;
     *)
-        echo "Argumen tidak dikenal. Defaulting to OpenGL."
+        echo "[-] Defaulting to OpenGL."
         renderer=opengl
         ;;
 esac
@@ -112,7 +112,7 @@ case $1 in
         renderer2=skiavkthreaded
         ;;
     *)
-        echo "Argumen tidak dikenal. Defaulting to SkiaGL TR."
+        echo "[-] Defaulting to SkiaGL TR."
         renderer2=skiaglthreaded
         ;;
 esac
