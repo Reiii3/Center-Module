@@ -201,7 +201,7 @@ else
   fi
   echo 
 
-case $1 in
+case $3 in
        "--collingmod")
             
 	          echo "┌[ Actived Colling System ]"
