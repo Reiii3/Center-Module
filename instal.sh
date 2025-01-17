@@ -68,7 +68,8 @@ fi
 
 if [ -n "$1" ] && [ "$1" == "opengl"]
  renderer2=opengl
-elif [ -n "$1" ] && [ "$1" == "vulkan"]
+fi
+if[ -n "$1" ] && [ "$1" == "vulkan"]
  renderer2=vulkan
 fi
 
