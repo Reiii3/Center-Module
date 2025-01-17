@@ -93,7 +93,8 @@ esac
 echo
 echo "┌═════════════════════════════════┐"
 echo " Render Selection : [${renderer}]"
-case $1 in 
+
+case $2 in 
     "--OpenGL")
         renderer2=opengl
         ;;
