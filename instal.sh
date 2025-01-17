@@ -66,14 +66,58 @@ if [ -n "$1" ] && [ "$1" == "-fl" ]; then
 	shift
 fi
 
-if [ -n "$1" ] && [ "$1" == "opengl"]
- renderer2=opengl
-fi
-if[ -n "$1" ] && [ "$1" == "vulkan"]
- renderer2=vulkan
-fi
+case $1 in 
+    "--OpenGL")
+        renderer=opengl
+        ;;
+    "--Vulkan")
+        renderer=vulkan
+        ;;
+    "--SkiaGl")
+        renderer=skiagl
+        ;;
+    "--SkiaVk")
+        renderer=skiavk
+        ;;
+    "--SkiaGl TR")
+        renderer=skiaglthreaded
+        ;;
+    "--SkiaVk TR")
+        renderer=skiavkthreaded
+        ;;
+    *)
+        echo "Argumen tidak dikenal. Defaulting to OpenGL."
+        renderer=opengl
+        ;;
+esac
+echo "Render Selection : [${renderer}]"
 
+case $1 in 
+    "--OpenGL")
+        renderer2=opengl
+        ;;
+    "--Vulkan")
+        renderer2=vulkan
+        ;;
+    "--SkiaGl")
+        renderer2=skiagl
+        ;;
+    "--SkiaVk")
+        renderer2=skiavk
+        ;;
+    "--SkiaGl TR")
+        renderer2=skiaglthreaded
+        ;;
+    "--SkiaVk TR")
+        renderer2=skiavkthreaded
+        ;;
+    *)
+        echo "Argumen tidak dikenal. Defaulting to OpenGL."
+        renderer2=opengl
+        ;;
+esac
 echo "Render Backend   : [${renderer2}]"
+
 sleep 0.5
 echo
 
