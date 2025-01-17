@@ -90,7 +90,9 @@ case $1 in
         renderer=opengl
         ;;
 esac
-echo "Render Selection : [${renderer}]"
+echo
+echo "┌═════════════════════════════════┐"
+echo " Render Selection : [${renderer}]"
 
 case $1 in 
     "--OpenGL")
@@ -117,7 +119,7 @@ case $1 in
         ;;
 esac
 echo "Render Backend   : [${renderer2}]"
-
+echoecho "└═════════════════════════════════┘"
 sleep 0.5
 echo
 
