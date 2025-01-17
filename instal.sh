@@ -112,8 +112,8 @@ case $1 in
         renderer2=skiavkthreaded
         ;;
     *)
-        echo "Argumen tidak dikenal. Defaulting to OpenGL."
-        renderer2=opengl
+        echo "Argumen tidak dikenal. Defaulting to SkiaGL TR."
+        renderer2=skiaglthreaded
         ;;
 esac
 echo "Render Backend   : [${renderer2}]"
