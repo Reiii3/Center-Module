@@ -90,22 +90,22 @@ echo "Render Selection : [${renderer}]"
 sleep 0.5
 
 case $1 in 
-    "--OpenGL" | --OpenGL}
+    "--OpenGL" | --OpenGL)
         renderer2=opengl
         ;;
-    "--Vulkan" | --Vulkan}
+    "--Vulkan" | --Vulkan)
         renderer2=vulkan
         ;;
-    "--SkiaGl" | --SkiaGl}
+    "--SkiaGl" | --SkiaGl)
         renderer2=skiagl
         ;;
-    "--SkiaVk" | --SkiaVk}
+    "--SkiaVk" | --SkiaVk)
         renderer2=skiavk
         ;;
-    "--SkiaGl Thread" | *}
+    "--SkiaGl Thread" | *)
         renderer2=skiaglthreaded
         ;;
-    "--SkiaVk Thread" | --SkiaVkTR}
+    "--SkiaVk Thread" | --SkiaVkTR)
         renderer2=skiavkthreaded
         ;;
 esac
