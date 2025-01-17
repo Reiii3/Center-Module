@@ -118,6 +118,8 @@ case $2 in
         renderer2=skiaglthreaded
         ;;
 esac
+echo "┌═════════════════════════════════┐"
+echo " Render Selection : [${renderer}]"
 echo " Render Backend   : [${renderer2}]"
 echo "└═════════════════════════════════┘"
 sleep 0.5
