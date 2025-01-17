@@ -66,49 +66,12 @@ if [ -n "$1" ] && [ "$1" == "-fl" ]; then
 	shift
 fi
 
-case $1 in 
-    "--OpenGL" | *)
-        renderer=opengl
-        ;;
-    "--Vulkan" | --Vulkan)
-        renderer=vulkan
-        ;;
-    "--SkiaGl" | --SkiaGl)
-        renderer=skiagl
-        ;;
-    "--SkiaVk" | --SkiaVk)
-        renderer=skiavk
-        ;;
-    "--SkiaGl Thread" | --SkiaGlTR)
-        renderer=skiaglthreaded
-        ;;
-    "--SkiaVk Thread" | --SkiaVkTR)
-        renderer=skiavkthreaded
-        ;;
-esac
-echo "Render Selection : [${renderer}]"
-sleep 0.5
+if [ -n "$1" ] && [ "$1" == "opengl"]
+ renderer2=opengl
+elif [ -n "$1" ] && [ "$1" == "vulkan"]
+ renderer2=vulkan
+fi
 
-case $1 in 
-    "--OpenGL" | --OpenGL)
-        renderer2=opengl
-        ;;
-    "--Vulkan" | --Vulkan)
-        renderer2=vulkan
-        ;;
-    "--SkiaGl" | --SkiaGl)
-        renderer2=skiagl
-        ;;
-    "--SkiaVk" | --SkiaVk)
-        renderer2=skiavk
-        ;;
-    "--SkiaGl Thread" | *)
-        renderer2=skiaglthreaded
-        ;;
-    "--SkiaVk Thread" | --SkiaVkTR)
-        renderer2=skiavkthreaded
-        ;;
-esac
 echo "Render Backend   : [${renderer2}]"
 sleep 0.5
 echo
