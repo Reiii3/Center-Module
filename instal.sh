@@ -90,7 +90,9 @@ case $1 in
         renderer=opengl
         ;;
 esac
-
+echo
+echo "┌═════════════════════════════════┐"
+echo " Render Selection : [${renderer}]"
 case $1 in 
     "--OpenGL")
         renderer2=opengl
@@ -115,9 +117,6 @@ case $1 in
         renderer2=skiaglthreaded
         ;;
 esac
-echo
-echo "┌═════════════════════════════════┐"
-echo " Render Selection : [${renderer}]"
 echo " Render Backend   : [${renderer2}]"
 echo "└═════════════════════════════════┘"
 sleep 0.5
