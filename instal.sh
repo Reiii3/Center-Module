@@ -89,9 +89,7 @@ case $1 in
         echo "[-] Defaulting to OpenGL."
         renderer=opengl
         ;;
-esac
-echo
-
+esac 
 
 case $2 in 
     "--OpenGL")
