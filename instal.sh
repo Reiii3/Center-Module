@@ -66,60 +66,8 @@ if [ -n "$1" ] && [ "$1" == "-fl" ]; then
 	shift
 fi
 
-case $1 in 
-    "--OpenGL")
-        renderer=opengl
-        ;;
-    "--Vulkan")
-        renderer=vulkan
-        ;;
-    "--SkiaGl")
-        renderer=skiagl
-        ;;
-    "--SkiaVk")
-        renderer=skiavk
-        ;;
-    "--SkiaGl TR")
-        renderer=skiaglthreaded
-        ;;
-    "--SkiaVk TR")
-        renderer=skiavkthreaded
-        ;;
-    *)
-        echo "[-] Defaulting to OpenGL."
-        renderer=opengl
-        ;;
-esac 
 
-case $2 in 
-    "--OpenGL")
-        renderer2=opengl
-        ;;
-    "--Vulkan")
-        renderer2=vulkan
-        ;;
-    "--SkiaGl")
-        renderer2=skiagl
-        ;;
-    "--SkiaVk")
-        renderer2=skiavk
-        ;;
-    "--SkiaGl TR")
-        renderer2=skiaglthreaded
-        ;;
-    "--SkiaVk TR")
-        renderer2=skiavkthreaded
-        ;;
-    *)
-        echo "[-] Defaulting to SkiaGL TR."
-        renderer2=skiaglthreaded
-        ;;
-esac
-echo "┌═════════════════════════════════┐"
-echo " Render Selection : [${renderer}]"
-echo " Render Backend   : [${renderer2}]"
-echo "└═════════════════════════════════┘"
-sleep 0.5
+
 echo
 
 if [ ${runPackage} = "com.mojang.minecraftpe" ]; then
