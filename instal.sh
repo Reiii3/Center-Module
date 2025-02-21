@@ -13,7 +13,8 @@ log_sys="$log_folder/install_selesai"
 dvc_ins="$log_folder/dvc"
 
 
-# Local Function
+
+
 if [ ! -f "$log_folder" ]; then
     mkdir -p "$log_folder" # Membuat folder untul menyimpan file penanda
     sleep 1
@@ -35,6 +36,31 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
     renderer="$2"
     shift 
 fi
+
+
+
+# Daftar package game yang ingin dipantau
+GAME_PACKAGES="${runPackage}"
+
+# Fungsi untuk mengecek apakah game sedang berjalan
+is_game_running() {
+    for pkg in $GAME_PACKAGES; do
+        if pidof $pkg >/dev/null 2>&1; then
+            return 0  # Game ditemukan
+        fi
+    done
+    return 1  # Tidak ada game yang berjalan
+}
+
+# Loop untuk memantau aplikasi
+while true; do
+    if is_game_running; then
+        refact debug.hwui.renderer skiavk
+    else
+        refact debug.hwui.renderer opengl
+    fi
+    sleep 5  # Cek setiap 5 detik
+done
 
 printer() {
 text="$1"
