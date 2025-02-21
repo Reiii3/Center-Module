@@ -3,10 +3,94 @@ if [ $AXERON = false ]; then
 fi
 $AXFUN
 import axeron.prop
-local core="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC2QyrYAcvaZ1Ez9DPOyctd9lC21yrN4mt2ycsXnmP29pQJ5qrR=="
+
+# Local System
+pkg2=$(pm list packages | grep -i "gvortex" | sed 's/package://g')
+gvr="$pkg2"
+lax=false
+log_folder="/data/local/tmp/axeron_cash/zcek_ins"
+log_sys="$log_folder/install_selesai"
+dvc_ins="$log_folder/dvc"
 
 
+# Local Function
+if [ ! -f "$log_folder" ]; then
+    mkdir -p "$log_folder" # Membuat folder untul menyimpan file penanda
+    sleep 1
+fi 
+if [ -n "$1" ] && [ "$1" == "-g" ];then
+    axprop $path_axeronprop nameGame -s "$2"
+    nameGame="$2"
+    shift 2
+    pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
+    runPackage="$pkg"
+fi
 
+if [ -n "$1" ] && [ "$1" == "-lx" ]; then 
+   lax=true
+   shift
+fi 
+
+if [ -n "$1" ] && [ "$1" == "-v" ];then
+    renderer="$2"
+    shift 
+fi
+
+printer() {
+text="$1"
+ i=0
+   while [ $i -lt ${#text} ]; do
+     echo -en "${text:$i:1}"
+ sleep 0.02
+   i=$((i + 1))
+ done
+echo
+}
+if [ -n "$1" ] && [ "$1" == "-g" ];then
+    axprop $path_axeronprop nameGame -s "$2"
+    nameGame="$2"
+    shift 2
+    pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
+    runPackage="$pkg"
+fi
+
+if [ -n "$1" ] && [ "$1" == "-lx" ]; then 
+   lax=true
+   shift
+fi 
+
+if [ -n "$1" ] && [ "$1" == "-v" ];then
+    renderer="$2"
+    shift 
+fi
+
+printer() {
+text="$1"
+ i=0
+   while [ $i -lt ${#text} ]; do
+     echo -en "${text:$i:1}"
+ sleep 0.02
+   i=$((i + 1))
+ done
+echo
+}
+
+fle_ins() {
+    folder_path="/data/local/tmp/axeron_cash/zcek_ins"
+    file_name="$1"    # Nama fil
+    # Buat file di dalamnya
+    file_path="$folder_path/$file_name"
+    echo "" > "$file_path"
+}
+fle_ins() {
+    folder_path="/data/local/tmp/axeron_cash/zcek_ins"
+    file_name="$1"    # Nama fil
+    # Buat file di dalamnya
+    file_path="$folder_path/$file_name"
+    echo "" > "$file_path"
+}
+
+  
 if [ $lax = false ]; then
 
     echo "=======================================" 
@@ -19,17 +103,17 @@ if [ $lax = false ]; then
     sleep 0.5
     printer "    Update    : none"
     sleep 0.5
-    if [ -f "$log_sys" ]; then
-      printer "    Status    : [Active]"
-    else
-      printer "    Status    : [Non Active]"
-    fi
+      if [ -f "$log_sys" ]; then
+         printer "    Status    : [Active]"
+       else
+         printer "    Status    : [Non Active]"
+      fi
     
-    if [ "$gvr" = "com.rezone.gvortex" ]; then 
-       printer "    GVR       : [Detected]"
-    else 
-       printer "    GVR       : [Not Detected]"
-    fi
+      if [ "$gvr" = "com.rezone.gvortex" ]; then 
+          printer "    GVR       : [Detected]"
+       else 
+          printer "    GVR       : [Not Detected]"
+      fi
     sleep 1
     echo "=======================================" 
     echo
@@ -47,15 +131,15 @@ else
     printer "    Update    : none"
     sleep 0.5
     if [ -f "$log_sys" ]; then
-      printer "    Status    : [Active]"
-    else
-      printer "    Status    : [Non Active]"
+        printer "    Status    : [Active]"
+      else
+        printer "    Status    : [Non Active]"
     fi
     
     if [ "$gvr" = "com.rezone.gvortex" ]; then 
-       printer "    GVR       : [Detected]"
-    else 
-       printer "    GVR       : [Not Detected]"
+         printer "    GVR       : [Detected]"
+      else 
+         printer "    GVR       : [Not Detected]"
     fi
     sleep 1
     echo "==================================="
@@ -67,10 +151,8 @@ if [ -z $runPackage ]; then
     exit 1
 fi
 
-if [ ! -f "$log_folder" ]; then
-    mkdir -p "$log_folder" # Membuat folder untul menyimpan file penanda
-    sleep 1
-fi 
+
+
 
 printer " [Running Game : [${nameGame}]"
 sleep 0.5
