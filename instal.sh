@@ -14,7 +14,6 @@ dvc_ins="$log_folder/dvc"
 funct="https://Reiii3.github.io/GVRSH/function/function.sh"
 
 xtorm "$funct" -fn "function"
-exit 0
 
 
 
