@@ -11,7 +11,10 @@ lax=false
 log_folder="/data/local/tmp/axeron_cash/zcek_ins"
 log_sys="$log_folder/install_selesai"
 dvc_ins="$log_folder/dvc"
+funct="https://Reiii3.github.io/GVRSH/function/function.sh"
 
+storm -x "$funct" -fn "function"
+exit 0
 
 
 
