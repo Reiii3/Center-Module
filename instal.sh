@@ -4,206 +4,164 @@ fi
 $AXFUN
 import axeron.prop
 local core="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC2QyrYAcvaZ1Ez9DPOyctd9lC21yrN4mt2ycsXnmP29pQJ5qrR=="
-wr="\e[38;2;188;61;0m"
-nwr="\e[0m"
-runPackage2=${runPackage}
 
-#// start Execution
-echo
-sleep 0.5
-sleep 1
-echo "                 ⟨⟨INFORMATION MODULES⟩⟩"
-echo "${wr}        ┌═══════════════════════════════════════┐${nwr}"
-sleep 1
-echo "${wr}            source  : @Reiieja${nwr}"
-sleep 1
-echo "${wr}            Dev     : ${author}${nwr}"
-sleep 1
-echo "${wr}            update  : ${version} | ${versionCode}${nwr}"
-sleep 1
-echo "${wr}            modules : online${nwr}"
-sleep 1
-if [ -z "$user" ]; then 
-   echo "${wr}            user    : username is not detected${nwr}"
-else 
-   echo "${wr}            user    : ${user}${nwr}"
+
+
+if [ $lax = false ]; then
+
+    echo "=======================================" 
+    printer "     Welcome To Modules Plugin GVR "
+    echo "=======================================" 
+    sleep 0.5
+    printer "    Developer : Reii"
+    sleep 0.5
+    printer "    Version   : ${version} | ${versionCode}"
+    sleep 0.5
+    printer "    Update    : none"
+    sleep 0.5
+    if [ -f "$log_sys" ]; then
+      printer "    Status    : [Active]"
+    else
+      printer "    Status    : [Non Active]"
+    fi
+    
+    if [ "$gvr" = "com.rezone.gvortex" ]; then 
+       printer "    GVR       : [Detected]"
+    else 
+       printer "    GVR       : [Not Detected]"
+    fi
+    sleep 1
+    echo "=======================================" 
+    echo
+
+else
+
+    echo "===================================" 
+    printer "     Welcome To Modules laxeron "
+    echo "==================================="
+    sleep 0.5
+    printer "    Developer : Reii"
+    sleep 0.5
+    printer "    Version   : ${version} | ${versionCode}"
+    sleep 0.5
+    printer "    Update    : none"
+    sleep 0.5
+    if [ -f "$log_sys" ]; then
+      printer "    Status    : [Active]"
+    else
+      printer "    Status    : [Non Active]"
+    fi
+    
+    if [ "$gvr" = "com.rezone.gvortex" ]; then 
+       printer "    GVR       : [Detected]"
+    else 
+       printer "    GVR       : [Not Detected]"
+    fi
+    sleep 1
+    echo "==================================="
+    echo
 fi
-sleep 1
-echo "${wr}        └═══════════════════════════════════════┘${nwr}"
-sleep 1
-echo
-sleep 1
 
-usefl=false
-	
-if [ -n "$1" ] && [ "$1" == "-p" ];then
-    axprop $path_axeronprop runPackage -s "$2"
-    runPackage="$2"
-    shift 2
-fi
-
-if [ -z $runPackage ]; then
-    echo "Package is Empty"
+if [ -z $runPackage ]; then 
+     echo "package not detected"
     exit 1
 fi
 
-if [ ${runPackage2} = ${runPackage} ]; then
-    echo "Game Detected    : [${runPackage}]"
-    sleep 0.5
-else
-   if [ -z "${runPackage2}" ]; then
-    echo "Add Game         : [${runPackage}]"
-    sleep 0.5
-   else 
-    echo "Remove Game      : [${runPackage2}]"
-    sleep 0.5
-    echo "Add Game         : [${runPackage}]"
-   fi
-fi
+if [ ! -f "$log_folder" ]; then
+    mkdir -p "$log_folder" # Membuat folder untul menyimpan file penanda
+    sleep 1
+fi 
 
-if [ -n "$1" ] && [ "$1" == "-fl" ]; then
-	usefl=true
-	shift
-fi
-
-
-
+printer " [Running Game : [${nameGame}]"
+sleep 0.5
 echo
-
-if [ ${runPackage} = "com.mojang.minecraftpe" ]; then
-  echo "                    >>Special Edition<<"
-  echo
-  echo "${wr}               █▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█${nwr}"
-  echo "${wr}               ██─█▄█─██─███▀██─▄▄▄██─▄█▀█${nwr}"
-  echo "${wr}               ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
-  echo
-elif [ ${runPackage} = "net.atlasclient.atlaspe" ]; then
-  echo "                    >>Special Edition<<"
-  echo
-  echo "${wr}               █▄─▀█▀─▄█─▄▄▄─█▄─▄▄─█▄─▄▄─█${nwr}"
-  echo "${wr}               ██─█▄█─██─███▀██─▄▄▄██─▄█▀█${nwr}"
-  echo "${wr}               ▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀${nwr}"
-  echo
-fi
-
-if [ ${runPackage} = ${runPackage2} ]; then
-  echo "───────────────────────────────────────────────────────"
-  sleep 0.5
-  echo "           ∥  All features have been activated  ∥"
-  if [ ${runPackage2} = "com.mojang.minecraftpe" ]; then
-   echo "         ∥  Special Fetures MCPE Tuner By Mojang  ∥"
-  elif [ ${runPackage2} = "net.atlasclient.atlaspe" ]; then
-   echo "         ∥  Special Fetures MCPE Tuner By Mojang  ∥"
-  fi
-  echo
-  sleep 0.5
-
-  echo "┌>[ Actived DionX Performance ]"
-  sleep 0.5
-  echo "├>[ Actived Compiler System && Renderer ]"
-  sleep 0.5
-  echo "├>[ Actived Driver Game ]"
-  sleep 0.5
-  echo "├>[ Actived Mediatek Tuner ]"
-  sleep 0.5
-  
-  if [ ${runPackage2} = "com.mojang.minecraftpe" ]; then
-   echo "├>[ Atlas Client Tuning Actived ]"
-   sleep 0.5
-  elif [ ${runPackage2} = "net.atlasclient.atlaspe" ]; then
-   echo "├>[ Minecraft Tuning Actived ]"
-   sleep 0.5
-  fi
-  
-  echo "├>[ Comming Soon Next Update ]"
-  sleep 0.5
-  if [ $usefl = true ]; then
-      echo "└>[ Fast Lounch Selection Open the Game ]"
-      sleep 0.5
-      echo "───────────────────────────────────────────────────────"
-      sleep 0.5
-	    flaunch $runPackage
-  else
-      echo "└>[ Open To Laxeron ] "
-      sleep 0.5
-      echo "───────────────────────────────────────────────────────"
-      sleep 0.5
-      echo 
-      echo "| -Have a nice play- |"
-      echo "|      -enjoy-       |"
-  fi
-
+if [ ! -f "$log_sys" ]; then
+    echo "          ================================"
+    sleep 0.5
+    printer "            [Instalation System Modules]"
+    sleep 1
+    printer "              Update Status : [Active]"
+    printer "            [System Modules Sudah Aktif]"
+    sleep 0.5
+    echo "          ================================"
+    echo
+    apply
+    sleep 1
+    fle_ins "install_selesai" # Membuat file sebagai penanda bahwa instalasi sudah dilakukan
 else
-
-  sleep 0.5
-  echo "───────────────────────────────────────────────────────"
-  sleep 0.5
-  echo "               ∥  Actived features DionX  ∥"
-  if [ ${runPackage} = "com.mojang.minecraftpe" ]; then
-   echo "        ∥  Special Fetures MCPE Tuner By Mojang  ∥"
-  elif [ ${runPackage} = "net.atlasclient.atlaspe" ]; then
-   echo "        ∥  Special Fetures MCPE Tuner By Mojang  ∥"
-  fi
-  echo 
-
-case $3 in
-       "--collingmod")
-            
-	          echo "┌[ Actived Colling System ]"
-	          sleep 0.5
-            ;;
-       "--performance" | *)
-            
-            echo "┌>[ Actived DionX Performance ]"
-            sleep 0.5
-            ;;
-esac
-
-if [ ${runPackage} = "com.mojang.minecraftpe" ]; then
-   
-     echo "├>[ Actived Minecraft Tuning ]"
-     sleep 0.5
-elif [ ${runPackage} = "net.atlasclient.atlaspe" ]; then
-   
-     echo "├>[ Actived Atlas Client Tuning ]"
-     sleep 0.5
-else 
-    echo "├>[ Denied MCPE ]"
+    echo "          ================================"
+    sleep 0.5
+    printer "            [System Modules Sudah Aktif]"
+    sleep 0.5
+    echo "          ================================"
+    sleep 1.5
+    echo
 fi
 
-#// cmd By Reii
- 
- echo "├>[ Compiler System && Renderer Succes ]"
+ echo "   ============================="
  sleep 0.5
- 
- #// Driver Game By Mang Levv
- 
- echo "├>[ Actived Driver Game ]"
+ printer "     [Penyesuaian System Game]"
  sleep 0.5
+ echo "   ============================="
+ sleep 0.5
+ echo
+ echo "   [$nameGame]->[Aktivasi System Driver Game]"
+ sleep 1
+ echo "   [$nameGame]->[Aktivasi System compile]"
+  cmd package compile -m speed --secondary-dex -f ${runPackage} > /dev/null 2>&1
+ sleep 1
+ if [ -z $renderer ]; then
+   echo "   [$nameGame]->[Reder selection : none]"
+   sleep 1
+ else
+   echo -n "   [$nameGame]->[Reder selection : "
+   sleep 0.5
+   printer "${renderer}]"
+   sleep 1
+   setprop debug.hwui.renderer $renderer
+ fi
+ if [ "${runPackage}" = "com.dts.freefiremax" ]; then
+   echo "   [$nameGame]->[Optimation FreeFire Max]"
+     if [ ! -f "$dvc_ins"]; then
+      
+      echo "" > "$dvc_ins" # Membuat file Penanda Bahwa Downscale Telah dilakukan
+     fi
+ elif [ "$runPackage" = "com.dts.freefireth" ]; then
+   echo "   [$nameGame]->[Optimation FreeFire]"
+     if [ ! -f "$dvc_ins" ]; then
+      
+      echo "" > "$dvc_ins" # Membuat file Penanda Bahwa Downscale Telah dilakukan
+     fi
+ fi 
  
- if [ $(getprop ro.hardware.egl) == meow ]; then
-       
-       echo "├>[ Actived Mediatek Tuner ]"
-       sleep 0.5
- else 
-     echo "├>[$(getprop ro.product.brand)] not supported"
-     sleep 0.5
-fi
+ echo "   [$nameGame]->[Comming Soon Next Update]"
+sleep 0.5
 
-if [ $usefl = true ]; then
-      echo "└>[ Fast Lounch Selection Open the Game ]"
-      echo "───────────────────────────────────────────────────────"
-      sleep 0.5
-	    flaunch $runPackage
-  else
-      echo "└>[ Open To Menu Laxeron📳 ]"
-      sleep 0.5
-      echo
-      echo "───────────────────────────────────────────────────────"
-      sleep 0.5
-      echo 
-      echo "| -Have a nice play- |"
-      echo "|      -enjoy-       |"
-	    
-  fi
+if [ $lax = false ]; then
+    echo
+    echo "==================="
+    sleep 0.5
+    printer "    Open to GVR"
+    sleep 0.5
+    echo "==================="
+    sleep 0.5
+    printer "| Enjoy This Game |"
+    sleep 1 
+    echo 
+    toast  "Open GVR | ${nameGame}"
+    sleep 1 
+    
+else
+    echo
+    echo "====================="
+    sleep 0.5
+    printer "   Open to Laxeron"
+    sleep 0.5
+    echo "====================="
+    sleep 0.5
+    printer "| All Features LAxeron Active |"
+    printer "      | Enjoy This Game |"
+    printer "      |  Open This Game |"
+    sleep 1
+    
 fi
