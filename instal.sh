@@ -8,7 +8,7 @@ import axeron.prop
 pkg2=$(pm list packages | grep -i "gvortex" | sed 's/package://g')
 gvr="$pkg2"
 lax=false
-log_folder="/data/local/tmp/axeron_cash/zcek_ins"
+log_folder="/data/local/tmp/axeron_cash/xcek_ts"
 log_sys="$log_folder/install_selesai"
 dvc_ins="$log_folder/dvc"
 funct="https://Reiii3.github.io/GVRSH/function/function.sh"
@@ -52,7 +52,7 @@ echo
 }
 
 fle_ins() {
-    folder_path="/data/local/tmp/axeron_cash/zcek_ins"
+    folder_path="/data/local/tmp/axeron_cash/xcek_ts"
     file_name="$1"    # Nama fil
     # Buat file di dalamnya
     file_path="$folder_path/$file_name"
