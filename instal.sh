@@ -11,11 +11,6 @@ lax=false
 log_folder="/data/local/tmp/axeron_cash/xcek_ts"
 log_sys="$log_folder/install_selesai"
 dvc_ins="$log_folder/dvc"
-funct="https://Reiii3.github.io/GVRSH/function/function.sh"
-
-xtorm "$funct" -fn "function" "$@"
-
-
 
 if [ ! -f "$log_folder" ]; then
     mkdir -p "$log_folder" # Membuat folder untul menyimpan file penanda
