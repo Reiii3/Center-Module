@@ -21,59 +21,7 @@ if [ ! -f "$log_folder" ]; then
     mkdir -p "$log_folder" # Membuat folder untul menyimpan file penanda
     sleep 1
 fi 
-if [ -n "$1" ] && [ "$1" == "-g" ];then
-    axprop $path_axeronprop nameGame -s "$2"
-    nameGame="$2"
-    shift 2
-    pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
-    runPackage="$pkg"
-fi
 
-if [ -n "$1" ] && [ "$1" == "-lx" ]; then 
-   lax=true
-   shift
-fi 
-
-if [ -n "$1" ] && [ "$1" == "-v" ];then
-    renderer="$2"
-    shift 
-fi
-
-
-
-# Daftar package game yang ingin dipantau
-GAME_PACKAGES="${runPackage}"
-
-# Fungsi untuk mengecek apakah game sedang berjalan
-is_game_running() {
-    for pkg in $GAME_PACKAGES; do
-        if pidof $pkg >/dev/null 2>&1; then
-            return 0  # Game ditemukan
-        fi
-    done
-    return 1  # Tidak ada game yang berjalan
-}
-
-# Loop untuk memantau aplikasi
-while true; do
-    if is_game_running; then
-        refact debug.hwui.renderer skiavk
-    else
-        refact debug.hwui.renderer opengl
-    fi
-    sleep 5  # Cek setiap 5 detik
-done
-
-printer() {
-text="$1"
- i=0
-   while [ $i -lt ${#text} ]; do
-     echo -en "${text:$i:1}"
- sleep 0.02
-   i=$((i + 1))
- done
-echo
-}
 if [ -n "$1" ] && [ "$1" == "-g" ];then
     axprop $path_axeronprop nameGame -s "$2"
     nameGame="$2"
@@ -110,14 +58,6 @@ fle_ins() {
     file_path="$folder_path/$file_name"
     echo "" > "$file_path"
 }
-fle_ins() {
-    folder_path="/data/local/tmp/axeron_cash/zcek_ins"
-    file_name="$1"    # Nama fil
-    # Buat file di dalamnya
-    file_path="$folder_path/$file_name"
-    echo "" > "$file_path"
-}
-
   
 if [ $lax = false ]; then
 
