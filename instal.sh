@@ -195,7 +195,7 @@ if [ $lax = false ]; then
     echo 
     toast  "Open GVR | ${nameGame}"
     sleep 1 
-    flaunch $gvr
+   
 else
     echo
     echo "====================="
