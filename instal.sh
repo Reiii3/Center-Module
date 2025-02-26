@@ -4,12 +4,13 @@ import axeron.prop
 # Local System
 url="https://reiii3.github.io/GVRSH/function/function.sh"
 url2="https://reiii3.github.io/Tester-Moduler/bin/tes_cekgame.sh"
-bin="/data/local/tmp"
+bin="/data/local/tmp/axeron_cash/tes_fnc"
 print="/data/local/tmp/fc"
 ckgm="$bin/cek_game"
-folder_function="$bin/axeron_cash/tes_fnc"
+folder_function="$bin"
 
-mkdir -p ""
+mkdir -p "$folder_function"
+
 storm -rP "$bin" -s "${url}" -fn "fc" "$@"
 sleep 0.5
 storm -rP "$bin" -s "${url2}" -fn "cek_game" "$@"
