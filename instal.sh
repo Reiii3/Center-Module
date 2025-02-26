@@ -7,7 +7,13 @@ url2="https://reiii3.github.io/Tester-Moduler/bin/tes_cekgame.sh"
 bin="/data/local/tmp"
 print="/data/local/tmp/fc"
 ckgm="$bin/cek_game"
+folder_function="$bin/axeron_cash/tes_fnc"
 
+mkdir -p ""
+storm -rP "$bin" -s "${url}" -fn "fc" "$@"
+sleep 0.5
+storm -rP "$bin" -s "${url2}" -fn "cek_game" "$@"
+sleep 0.5
 . $print
 echo "============================================"
 printer "  Welcome To Testing Logika Module By Reii"
@@ -23,14 +29,14 @@ if [ -n "$1" ] && [ "$1" == "-g" ];then
     runPackage="$pkg"
 fi
 
-   storm -rP "$bin" -s "${url}" -fn "fc" "$@"
+   
    if [ -f $print ]; then
      echo "File : ${print}  di temukan"
      else
      echo "File : ${print} tidak di temuka"
   fi
-  storm -rP "$bin" -s "${url2}" -fn "cek_game" "$@"
-   if [ ! $ckgm ]; then
+  
+   if [ -f $ckgm ]; then
    echo "File : ${ckgm} di temukan"
    else
    echo "File : ${ckgm} tidak di temukan"
