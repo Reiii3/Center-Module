@@ -1,4 +1,7 @@
 #!/system/bin/sh
+if [ "$(basename "$0")" != "king64" ]; then
+    exit 1
+fi
 
 cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: Fozax | Author: Henpeex\""
 eval "$cmd"
