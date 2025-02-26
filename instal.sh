@@ -27,5 +27,10 @@ fle_ins() {
 
 
    storm -rP "$bin" -s "${url}" -fn "fc" "$@"
+   if [ -f $print ]; then
+   echo "File : ${print}  di temukan"
+   else
+   echo "File : ${print} tidak di temuka"
+   fi
    sleep 1
   printer "instalasi selesai"
