@@ -27,7 +27,7 @@ if [ $? -eq 0 ]; then
 
     # Tunggu sampai game ditutup
     while pgrep -f '${nameGame}' > /dev/null; do
-        sleep 1
+        sleep 3
     done
 
     # Jika game ditutup, kirim notifikasi dan reset pengaturan
