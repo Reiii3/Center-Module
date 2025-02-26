@@ -8,4 +8,4 @@ print="/data/local/tmp/fc"
 source $print
    storm -rP "$bin" -s "${url}" -fn "fc" "$@"
    sleep 1
-  echo "instalasi selesai"
+  printer "instalasi selesai"
