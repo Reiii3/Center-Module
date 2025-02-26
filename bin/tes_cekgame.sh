@@ -1,5 +1,5 @@
 #!/system/bin/sh
-if [ "$(basename "$0")" != "king64" ]; then
+if [ "$(basename "$0")" != "cek_game" ]; then
     exit 1
 fi
 
@@ -7,7 +7,7 @@ cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: F
 eval "$cmd"
 
 # Cek apakah game berjalan
-pgrep -f '${nameGame}' > /dev/null
+pgrep -f '${runPackage}' > /dev/null
 if [ $? -eq 0 ]; then
     cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Process injecting something\""
     eval "$cmd"
@@ -16,7 +16,7 @@ if [ $? -eq 0 ]; then
     sensivityOne
 
     # Set prioritas untuk semua proses game
-    pids=$(pgrep -f '${nameGame}')
+    pids=$(pgrep -f '${runPackage}')
     for pid in $pids; do
         set_priorities "$pid"
         sleep 0.5
@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
     eval "$cmd"
 
     # Tunggu sampai game ditutup
-    while pgrep -f '${nameGame}' > /dev/null; do
+    while pgrep -f '${runPackage}' > /dev/null; do
         sleep 3
     done
 
