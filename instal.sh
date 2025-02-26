@@ -5,7 +5,7 @@ import axeron.prop
 url="https://reiii3.github.io/GVRSH/function/function.sh"
 url2="https://reiii3.github.io/Tester-Moduler/bin/tes_cekgame.sh"
 bin="/data/local/tmp/axeron_cash/tes_fnc"
-print="/data/local/tmp/fc"
+print="$bin/fc"
 ckgm="$bin/cek_game"
 folder_function="$bin"
 
