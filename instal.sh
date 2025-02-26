@@ -10,7 +10,7 @@ ckgm="$bin/cek_game"
 
 source $print
 echo "============================================"
-echo "  Welcome To Testing Logika Module By Reii"
+printer "  Welcome To Testing Logika Module By Reii"
 echo "============================================"
 responebin="$ckgm"
 
