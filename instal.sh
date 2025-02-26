@@ -2,8 +2,8 @@ $AXFUN
 import axeron.prop
 
 # Local System
-url=""
-bin=""
+url="https://reiii3.github.io/Tester-Moduler/bin/tes_cekgame.sh"
+bin="/data/local/tmp"
 
 stats="pgrep -f tes"
 if [ ! $stats ]; then
