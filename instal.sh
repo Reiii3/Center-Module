@@ -35,6 +35,7 @@ fi
    else
    echo "File : ${ckgm} tidak di temukan"
    fi
+   exit 0
   sleep 2
         echo
         echo
