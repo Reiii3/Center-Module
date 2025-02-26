@@ -12,6 +12,16 @@ source $print
 echo "============================================"
 echo "  Welcome To Testing Logika Module By Reii"
 echo "============================================"
+responebin="$ckgm"
+
+
+if [ -n "$1" ] && [ "$1" == "-g" ];then
+    axprop $path_axeronprop nameGame -s "$2"
+    nameGame="$2"
+    shift 2
+    pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
+    runPackage="$pkg"
+fi
 
    storm -rP "$bin" -s "${url}" -fn "fc" "$@"
    if [ -f $print ]; then
@@ -25,24 +35,23 @@ echo "============================================"
    else
    echo "File : ${ckgm} tidak di temukan"
    fi
-  
+  sleep 2
         echo
         echo
-        status=$(pgrep -f king64) >/dev/null 2>&1
+        status=$(pgrep -f cek_game) >/dev/null 2>&1
         if [ ! "$status" ]; then
-                storm -rP "$bin" -s "${url}" -fn "king64" "$@"
-                nohup sh /data/local/tmp/king64 >/dev/null 2>&1 &
+                storm -rP "$bin" -s "${url}" -fn "cek_game" "$@"
+                nohup sh /data/local/tmp/cek_game >/dev/null 2>&1 &
         fi
         sleep 2
-        status=$(pgrep -f king64) >/dev/null 2>&1
+        status=$(pgrep -f cek_game) >/dev/null 2>&1
         if [ "$status" ]; then
                 echo "Programs berhasil terpasang "
                 rm $responsebin
-                am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex $v_toast " --ei duration "4000" >/dev/null 2>&1
+                am broadcast -a axeron.show.TOAST --es title "" --es msg "Developer : henpeex  " --ei duration "4000" >/dev/null 2>&1
         else
                 printer "Program failed :"
                 rm $responsebin
-                rm -rf $path
         fi
         echo
         echo
