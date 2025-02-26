@@ -5,6 +5,7 @@ import axeron.prop
 url="https://reiii3.github.io/GVRSH/function/function.sh"
 bin="/data/local/tmp"
 print="/data/local/tmp/fc"
+
 printer() {
 text="$1"
  i=0
