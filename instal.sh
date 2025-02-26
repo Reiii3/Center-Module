@@ -8,7 +8,7 @@ bin="/data/local/tmp"
 print="/data/local/tmp/fc"
 ckgm="$bin/cek_game"
 
-source $print
+. $print
 echo "============================================"
 printer "  Welcome To Testing Logika Module By Reii"
 echo "============================================"
@@ -35,6 +35,8 @@ fi
    else
    echo "File : ${ckgm} tidak di temukan"
    fi
+   
+   
    exit 0
   sleep 2
         echo
