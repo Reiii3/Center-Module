@@ -4,8 +4,10 @@ import axeron.prop
 # Local System
 url="https://reiii3.github.io/GVRSH/function/function.sh"
 url2="https://reiii3.github.io/Tester-Moduler/bin/tes_cekgame.sh"
+url3="https://reiii3.github.io/Tester-Moduler/bin/ver.sh"
 bin="/data/local/tmp/axeron_cash/tes_fnc"
 print="$bin/fc"
+ver="$bin/version"
 ckgm="$bin/cek_game"
 folder_function="$bin"
 
@@ -15,11 +17,17 @@ storm -rP "$bin" -s "${url}" -fn "fc" "$@"
 sleep 0.5
 storm -rP "$bin" -s "${url2}" -fn "cek_game" "$@"
 sleep 0.5
+storm -rP "$bin" -s "${url3}" -fn "version" "$@"
+sleep 0.5
 . $print
+. $ver
+version=version
+verc=versionC
 echo "============================================"
 printer "  Welcome To Testing Logika Module By Reii"
 echo "============================================"
 responebin="$ckgm"
+printer "      Version : ${version}"
 
 
 if [ -n "$1" ] && [ "$1" == "-g" ];then
