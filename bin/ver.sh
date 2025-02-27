@@ -5,3 +5,4 @@ version() {
 versionC() {
  echo "13"
 }
+author="Reii"
