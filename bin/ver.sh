@@ -1,7 +1,7 @@
 version() {
- peinter " v1.0-beta"
+ echo " v1.0-beta"
 }
 
 versionC() {
- printer "10"
+ echo "10"
 }
