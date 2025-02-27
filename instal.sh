@@ -40,8 +40,11 @@ responebin="$ckgm"
 printer "      Module Version : ${version} | ${verc}"
 printer "      Base Version   : ${bversion} | ${bversionCode}"
 printer "      Developer      : ${author}"
+printer "      Update         : ${upt}"
 printer "      Running Game   : ${nameGame}"
 printer "      Package        : ${runPackage}"
+echo "============================================"
+echo
 sleep 0.5
    if [ -f $print ]; then
      echo "File : ${print}  di temukan"
@@ -58,6 +61,7 @@ sleep 0.5
   
    
   sleep 2
+  exit 0
 game_list="$runPackage"
 
 
