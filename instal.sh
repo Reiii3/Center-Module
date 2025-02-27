@@ -13,6 +13,7 @@ path_online="$bin/version"
 if [ ! -f $bin ]; then
    mkdir -p "$bin"
 fi
+mkdir -p "/data/local/tmp/tes"
 
 storm -rP "$bin" -s "${url}" -fn "fc" "$@"
 sleep 0.5
