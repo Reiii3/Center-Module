@@ -9,7 +9,6 @@ bin="/data/local/tmp/axeron_cash/tes_fnc"
 print="$bin/fc"
 ver="$bin/version"
 ckgm="$bin/cek_game"
-folder_function="$bin"
 
 mkdir -p "$folder_function"
 
