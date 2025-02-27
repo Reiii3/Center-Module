@@ -43,10 +43,7 @@ fi
    echo "File : ${ckgm} tidak di temukan"
    fi
    echo
-   printer "Ku rasakn luka dalam hatiku"
-   printer "Rasa cinta yang ada untuk dirimu"
-   printer "Ku lelah dengan semua yang ada"
-   printer "ingin ku lepas semua"
+  
    
    exit 0
   sleep 2
