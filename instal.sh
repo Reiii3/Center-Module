@@ -27,7 +27,9 @@ echo "============================================"
 printer "  Welcome To Testing Logika Module By Reii"
 echo "============================================"
 responebin="$ckgm"
-printer "      Version : ${version} | ${verc}"
+printer "      Version   : ${version} | ${verc}"
+printer "      Developer : ${author}"
+
 
 
 if [ -n "$1" ] && [ "$1" == "-g" ];then
