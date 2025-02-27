@@ -9,6 +9,7 @@ bin="/data/local/tmp/axeron_cash/tes_fnc"
 print="$bin/fc"
 ver="$bin/version"
 ckgm="$bin/cek_game"
+path_online="$bin/version"
 if [ ! -f $bin ]; then
    mkdir -p "$bin"
 fi
@@ -21,8 +22,16 @@ storm -rP "$bin" -s "${url3}" -fn "version" "$@"
 sleep 0.5
 . $print
 . $ver
-
-
+sleep 1
+if [ -n "$1" ] && [ "$1" == "-g" ];then
+    axprop $path_online nameGame -s "$2"
+    nameGame="$2"
+    shift 2
+    pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
+    axprop $path_axeronprop runPackage -s "$pkg"
+    runPackage="$pkg"
+fi
+sleep 1
 echo "============================================"
 printer "  Welcome To Testing Logika Module By Reii"
 echo "============================================"
@@ -30,18 +39,8 @@ responebin="$ckgm"
 printer "      Module Version : ${version} | ${verc}"
 printer "      Base Version   : ${bversion} | ${bversionCode}"
 printer "      Developer      : ${author}"
-
-
-
-if [ -n "$1" ] && [ "$1" == "-g" ];then
-    axprop $path_axeronprop nameGame -s "$2"
-    nameGame="$2"
-    shift 2
-    pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
-    runPackage="$pkg"
-fi
-
-   
+printer "      Running Game   : ${nameGame}"
+sleep 0.5
    if [ -f $print ]; then
      echo "File : ${print}  di temukan"
      else
