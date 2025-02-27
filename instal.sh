@@ -58,25 +58,16 @@ sleep 0.5
    
    exit 0
   sleep 2
-        echo
-        echo
-        status=$(pgrep -f cek_game) >/dev/null 2>&1
-        if [ ! "$status" ]; then
-                storm -rP "$bin" -s "${url}" -fn "cek_game" "$@"
-                nohup sh /data/local/tmp/cek_game >/dev/null 2>&1 &
-        fi
-        sleep 2
-        status=$(pgrep -f cek_game) >/dev/null 2>&1
-        if [ "$status" ]; then
-                echo "Programs berhasil terpasang "
-                rm $responsebin
-                am broadcast -a axeron.show.TOAST --es title "" --es msg "Developer : henpeex  " --ei duration "4000" >/dev/null 2>&1
-        else
-                printer "Program failed :"
-                rm $responsebin
-        fi
-        echo
-        echo
-        sleep 1
-   sleep 1
-  printer "instalasi selesai"
+game_list="$runPackage"
+
+while true; do
+    current_app=$(dumpsys activity top | grep -Eo "ACTIVITY [^ ]+" | awk '{print $2}' | grep -E "$game_list")
+    
+    if [ -n "$current_app" ]; then
+        cmd notification post -S bigtext -t "Game Detector" "Tag" "Game detected: $current_app"
+    else
+        cmd notification post -S bigtext -t "Game Detector" "Tag" "Game closed"
+    fi
+
+    sleep 3
+done
