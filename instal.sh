@@ -25,9 +25,9 @@ echo "============================================"
 printer "  Welcome To Testing Logika Module By Reii"
 echo "============================================"
 responebin="$ckgm"
-printer "      Base Version : ${bversion} | ${bversionCode}"
-printer "      Version      : ${version} | ${verc}"
-printer "      Developer    : ${author}"
+printer "      Module Version : ${version} | ${verc}"
+printer "      Base Version   : ${bversion} | ${bversionCode}"
+printer "      Developer      : ${author}"
 
 
 
