@@ -9,8 +9,9 @@ bin="/data/local/tmp/axeron_cash/tes_fnc"
 print="$bin/fc"
 ver="$bin/version"
 ckgm="$bin/cek_game"
-
-mkdir -p "$folder_function"
+if [ ! -f $bin ]; then
+   mkdir -p "$bin"
+fi
 
 storm -rP "$bin" -s "${url}" -fn "fc" "$@"
 sleep 0.5
