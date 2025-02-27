@@ -40,6 +40,7 @@ printer "      Module Version : ${version} | ${verc}"
 printer "      Base Version   : ${bversion} | ${bversionCode}"
 printer "      Developer      : ${author}"
 printer "      Running Game   : ${nameGame}"
+printer "      Package        : ${runPackage}"
 sleep 0.5
    if [ -f $print ]; then
      echo "File : ${print}  di temukan"
