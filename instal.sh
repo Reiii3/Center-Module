@@ -21,8 +21,6 @@ storm -rP "$bin" -s "${url3}" -fn "version" "$@"
 sleep 0.5
 . $print
 . $ver
-version=$(version)
-verc=$(versionC)
 echo "============================================"
 printer "  Welcome To Testing Logika Module By Reii"
 echo "============================================"
