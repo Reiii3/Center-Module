@@ -1,7 +1,7 @@
 version() {
- echo " v1.0-beta"
+ echo " v1.2-beta"
 }
 
 versionC() {
- echo "10"
+ echo "12"
 }
