@@ -5,7 +5,7 @@ import axeron.prop
 url="https://reiii3.github.io/GVRSH/function/function.sh"
 url2="https://reiii3.github.io/Tester-Moduler/bin/tes_cekgame.sh"
 url3="https://reiii3.github.io/Tester-Moduler/bin/ver.sh"
-bin="/data/local/tmp/axeron_cash/tes_fnc"
+bin="/data/local/tmp/tes_fnc"
 print="$bin/fc"
 ver="$bin/version"
 ckgm="$bin/cek_game"
@@ -13,7 +13,6 @@ path_online="$bin/version"
 if [ ! -f $bin ]; then
    mkdir -p "$bin"
 fi
-mkdir -p "/data/local/tmp/tes"
 
 storm -rP "$bin" -s "${url}" -fn "fc" "$@"
 sleep 0.5
