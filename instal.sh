@@ -10,6 +10,7 @@ print="$bin/fc"
 ver="$bin/version"
 ckgm="$bin/cek_game"
 path_online="$bin/version"
+status_detec="$bin/game_status"  
 if [ ! -f $bin ]; then
    mkdir -p "$bin"
 fi
@@ -57,17 +58,25 @@ sleep 0.5
   
    
   sleep 2
-  exit 0
 game_list="$runPackage"
 
-while true; do
-    current_app=$(dumpsys activity top | grep -Eo "ACTIVITY [^ ]+" | awk '{print $2}' | grep -E "$game_list")
-    
-    if [ -n "$current_app" ]; then
-        cmd notification post -S bigtext -t "Game Detector" "Tag" "Game detected: $current_app"
-    else
-        cmd notification post -S bigtext -t "Game Detector" "Tag" "Game closed"
-    fi
 
-    sleep 3
-done
+# Ambil aplikasi yang sedang aktif (foreground)
+current_app=$(dumpsys activity top | grep -Eo "ACTIVITY [^ ]+" | awk '{print $2}' | grep -E "$game_list")
+
+# Ambil status sebelumnya
+if [ -f "$status_detec" ]; then
+    prev_status=$(cat "$status_detec")
+else
+    prev_status=""
+fi
+
+# Cek perubahan status game
+if [ -n "$current_app" ] && [ "$prev_status" != "running" ]; then
+    cmd notification post -S bigtext -t "Game Detector" "Tag" "Game detected: $current_app"
+    echo "running" > "$status_detec"
+
+elif [ -z "$current_app" ] && [ "$prev_status" != "stopped" ]; then
+    cmd notification post -S bigtext -t "Game Detector" "Tag" "Game closed"
+    echo "stopped" > "$status_detec"
+fi
