@@ -1,8 +1,3 @@
-version() {
- echo "1.3-beta"
-}
-
-versionC() {
- echo "13"
-}
+version="1.4"
+verc="14"
 author="Reii"
