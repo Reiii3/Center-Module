@@ -73,10 +73,10 @@ fi
 
 # Cek perubahan status game
 if [ -n "$current_app" ] && [ "$prev_status" != "running" ]; then
-    cmd notification post -S bigtext -t "Game Detector" "Tag" "Game detected: $current_app" >/dev/null 2>&1
+    cmd notification post -S bigtext -t "Game Detector" "Tag" "Game detected: $current_app" 
     echo "running" > "$status_detec"
 
 elif [ -z "$current_app" ] && [ "$prev_status" != "stopped" ]; then
-    cmd notification post -S bigtext -t "Game Detector" "Tag" "Game closed" >/dev/null 2>&1
+    cmd notification post -S bigtext -t "Game Detector" "Tag" "Game closed" 
     echo "stopped" > "$status_detec"
 fi
