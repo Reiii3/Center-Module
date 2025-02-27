@@ -1,7 +1,7 @@
 version() {
-  v1.0-beta
+ peinter " v1.0-beta"
 }
 
 versionC() {
-  10
+ printer "10"
 }
