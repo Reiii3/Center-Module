@@ -56,7 +56,6 @@ sleep 0.5
    echo
   
    
-   exit 0
   sleep 2
 game_list="$runPackage"
 
