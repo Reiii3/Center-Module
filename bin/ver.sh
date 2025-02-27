@@ -1,7 +1,7 @@
-verison() {
+version() {
   v1.0-beta
 }
 
-verisonC() {
+versionC() {
   10
 }
