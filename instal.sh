@@ -57,6 +57,7 @@ sleep 0.5
   
    
   sleep 2
+  exit 0
 game_list="$runPackage"
 
 while true; do
