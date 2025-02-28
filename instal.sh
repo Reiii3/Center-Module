@@ -33,7 +33,7 @@ if [ -n "$1" ] && [ "$1" == "-g" ];then
     runPackage="$pkg"
 fi
 
-if [ $maintenance = true ]; then
+if [ $maintenance = "true" ]; then
    echo "========================="
    printer "  MAINTENANCE 1.6 BETA"
    echo "========================="
