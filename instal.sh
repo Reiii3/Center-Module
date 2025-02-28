@@ -78,8 +78,10 @@ fi
       echo "    [Ekstraking System]"
       if [ -z $renderer ]; then
        echo "  -[RENDERER SELECTION] : opengl"
+       setprop debug.hwui.renderer opengl
       else 
        echo "  -[RENDER SELECTION : ${renderer}"
+       setprop debug.hwui.renderer $renderer
       fi
       echo "  -[SYSTEM COMPILER  : [Succes]"
       echo "  -[DRIVER GAME]     : [Actived]"
