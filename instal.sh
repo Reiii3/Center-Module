@@ -52,37 +52,41 @@ fi
       echo "======================================"
       printer "    Welcome To Modules EXOGAME VIP"
       echo "======================================"
-      echo "        INFORMATION EXOGAME"
-      echo "  -Modules Version : ${version} | ${verc}"
-      echo "  -Base Version    : ${bversion} | ${bversionCode}"
-      echo "  -Developer       : "
+      printer "        INFORMATION EXOGAME"
+      printer "  -Modules Version : ${version} | ${verc}"
+      printer "  -Base Version    : ${bversion} | ${bversionCode}"
+      printer "  -Developer       : "
       if [ -f $system ]; then
-        echo "  -Status          : [Active]"
+        printer "  -Status          : [Active]"
       else 
-        echo "  -Status          : [Non Active]"
+        printer "  -Status          : [Non Active]"
       fi
-      echo "  -Play Game       : $nameGame"
+      printer "  -Play Game       : $nameGame"
       echo "======================================"
       
       if [ ! -f "$system" ]; then 
         echo "      ==============================="
-        echo "        [INSTALATION SYSTEM MODULES"
-        echo "                 [Active]"
+        printer "        [INSTALATION SYSTEM MODULES"
+        printer "                 [Active]"
         echo "      ==============================="
         echo "" > "$system"
+       else 
+        echo "      ======================"
+        printer "         [SYSTEM ACTIVED]"
+        echo "      ======================"
       fi
       
       echo "============================="
-      echo "  [PENYESUAIAN SYSTEM GAME]"
+      printer "  [PENYESUAIAN SYSTEM GAME]"
       echo "============================="
-      echo "    [Ekstraking System]"
+      printer "    [Ekstraking System]"
       if [ -z $renderer ]; then
-       echo "  -[RENDER SELECTION] : opengl"
+       printer "  -[RENDER SELECTION] : opengl"
        setprop debug.hwui.renderer opengl
       else 
-       echo "  -[RENDER SELECTION] : ${renderer}"
+       printer "  -[RENDER SELECTION] : ${renderer}"
        setprop debug.hwui.renderer $renderer
       fi
-      echo "  -[SYSTEM COMPILER  : [Succes]"
-      echo "  -[DRIVER GAME]     : [Actived]"
-      echo "  -[ADD NEW]         : [COMMING SOON]"
+      printer "  -[SYSTEM COMPILER  : [Succes]"
+      printer "  -[DRIVER GAME]     : [Actived]"
+      printer "  -[ADD NEW]         : [COMMING SOON]"
