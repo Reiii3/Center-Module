@@ -44,55 +44,112 @@ if [ $maintenance = "true" ]; then
    printer "  -System Modules Update  "
    exit 0
 fi
+
+if [ tes1 = "true" ]; then
+    sleep 1
+    echo "============================================"
+    printer "  Welcome To Testing Logika Module By Reii"
+    echo "============================================"
+    responebin="$ckgm"
+    printer "    [Module Version] : ${version} | ${verc}"
+    printer "    [ Base Version ] : ${bversion} | ${bversionCode}"
+    printer "    [ Developer    ] : ${author}"
+    printer "    [ Play Game    ] : ${nameGame}"
+    printer "    [ Package      ] : ${runPackage}"
+    printer "    [ Update       ] : ${upt}"
+    echo "============================================"
+    echo
+    sleep 0.5
+       if [ -f $print ]; then
+         echo "File : ${print}  di temukan"
+         else
+         echo "File : ${print} tidak di temuka"
+      fi
+      
+       if [ -f $ckgm ]; then
+       echo "File : ${ckgm} di temukan"
+       else
+       echo "File : ${ckgm} tidak di temukan"
+       fi
+       echo
+      
+       
+      sleep 2
+      exit 0
+fi
+
+if [ tes2 = "true" ]; then 
+ bin="/data/local/tmp/exogame"
+fun="https://reiii3.github.io/GVRSH/function/function.sh"
+onprop="https://reiii3.github.io/EXOGAME/bin/prop.sh"
+system="$bin/system_instaled"
+
+function="$bin/function"
+prop="$bin/prop"
+
+if [ ! -f $bin ]; then
+  mkdir -p "$bin"
+fi
+
+storm -rP "$bin" -s "${fun}" -fn "function" "$@"
 sleep 1
-echo "============================================"
-printer "  Welcome To Testing Logika Module By Reii"
-echo "============================================"
-responebin="$ckgm"
-printer "    [Module Version] : ${version} | ${verc}"
-printer "    [ Base Version ] : ${bversion} | ${bversionCode}"
-printer "    [ Developer    ] : ${author}"
-printer "    [ Play Game    ] : ${nameGame}"
-printer "    [ Package      ] : ${runPackage}"
-printer "    [ Update       ] : ${upt}"
-echo "============================================"
-echo
-sleep 0.5
-   if [ -f $print ]; then
-     echo "File : ${print}  di temukan"
-     else
-     echo "File : ${print} tidak di temuka"
-  fi
-  
-   if [ -f $ckgm ]; then
-   echo "File : ${ckgm} di temukan"
-   else
-   echo "File : ${ckgm} tidak di temukan"
-   fi
+storm -rP "$bin" -s "${onprop}" -fn "prop" "$@"
+. $function
+. $prop
+
+if [ -n "$1" ] && [ "$1" == "-g" ];then
+    axprop $prop nameGame -s "$2"
+    nameGame="$2"
+    shift 2
+    pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
+    axprop $path_axeronprop runPackage -s "$pkg"
+    runPackage="$pkg"
+fi
+if [ -n "$1" ] && [ "$1" == "-v" ];then
+    renderer="$2"
+    shift 
+fi
+
+if [ $maintenance = "true" ]; then
+   echo "   ======================="
+   printer "     EXOGAME 1.0 BETA ON"
+   echo "   ======================="
+   printer "       [comming soon]"
    echo
+   printer "[IN THE PROCESS OF MANUFACTURING]"
+   sleep 1
+   exit 0
+fi
   
-   
-  sleep 2
-  exit 0
-game_list="$runPackage"
+echo "======================================"
+printer "    Welcome To Modules EXOGAME VIP"
+echo "======================================"
+echo "        INFORMATION EXOGAME"
+echo "  -Modules Version : "
+echo "  -Base Version    : "
+echo "  -Developer       : "
+if [ -f $system ]; then
+   echo "  -Status : [Active]"
+else 
+   echo "  -Status : [Non Active]"
+fi
+echo "  -Play Game : $nameGame"
+echo "  -Package   : $runPackage"
+echo "======================================"
 
-
-# Ambil aplikasi yang sedang aktif (foreground)
-current_app=$(dumpsys activity top | grep -Eo "ACTIVITY [^ ]+" | awk '{print $2}' | grep -E "$game_list")
-
-# Ambil status sebelumnya
-if [ -f "$status_detec" ]; then
-    prev_status=$(cat "$status_detec")
-else
-    prev_status=""
+if [ ! -f $system ]; then 
+  echo "      ==============================="
+  echo "        [INSTALATION SYSTEM MODULES"
+  echo "                 [Active]"
+  echo "      ==============================="
+  echo "" > "$system"
 fi
 
-# Cek perubahan status game
-if [ -n "$current_app" ] && [ "$prev_status" != "running" ]; then
-    cmd notification post -S bigtext -t "Game Detector" "Tag" "Game detected: $current_app" 
-    echo "running" > "$status_detec"
-
-elif [ -z "$current_app" ] && [ "$prev_status" != "stopped" ]; then
-    cmd notification post -S bigtext -t "Game Detector" "Tag" "Game closed" 
-    echo "stopped" > "$status_detec"
-fi
+echo "============================="
+echo "  [PENYESUAIAN SYSTEM GAME]"
+echo "============================="
+echo "    [Ekstraking System]"
+echo "  -[DRIVER GAME] : [Actived]"
+echo "  -[SYSTEM COMPILER : [Succes]"
+echo "  -[RENDER SELECTION ; ${renderer}"
+echo "  -[COMING SOON]"
