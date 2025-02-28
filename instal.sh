@@ -71,9 +71,9 @@ fi
         echo "      ==============================="
         echo "" > "$system"
        else 
-        echo "      ======================"
-        printer "         [SYSTEM ACTIVED]"
-        echo "      ======================"
+        echo 
+        printer "           [SYSTEM ACTIVED]"
+        echo 
       fi
       
       echo "============================="
