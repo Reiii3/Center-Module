@@ -77,4 +77,3 @@ fi
       echo "  -[SYSTEM COMPILER : [Succes]"
       echo "  -[RENDER SELECTION ; ${renderer}"
       echo "  -[COMING SOON]"
-fi
