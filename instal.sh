@@ -77,10 +77,10 @@ fi
       echo "============================="
       echo "    [Ekstraking System]"
       if [ -z $renderer ]; then
-       echo "  -[RENDERER SELECTION] : opengl"
+       echo "  -[RENDER SELECTION] : opengl"
        setprop debug.hwui.renderer opengl
       else 
-       echo "  -[RENDER SELECTION : ${renderer}"
+       echo "  -[RENDER SELECTION] : ${renderer}"
        setprop debug.hwui.renderer $renderer
       fi
       echo "  -[SYSTEM COMPILER  : [Succes]"
