@@ -11,8 +11,6 @@ ver="$bin/version"
 ckgm="$bin/cek_game"
 path_online="$bin/version"
 status_detec="$bin/game_status" 
-wr="\e[24;220;255;1;0m"
-nwr="\e[0m"
 if [ ! -f $bin ]; then
    mkdir -p "$bin"
 fi
@@ -39,11 +37,11 @@ if [ $maintenance = "true" ]; then
    echo "========================="
    printer "  MAINTENANCE 1.6 BETA"
    echo "========================="
-   printer "${wr} [WHAT'S UPDATED] ${nwr}"
-   printer "${wr} -New Function ${nwr}"
-   printer "${wr} -Add New Code ${nwr}"
-   printer "${wr} -Fix Logic Modules ${nwr}"
-   printer "${wr} -System Modules Update ${nwr}"
+   printer "  [WHAT'S UPDATED]  "
+   printer "  -New Function  "
+   printer "  -Add New Code  "
+   printer "  -Fix Logic Modules  "
+   printer "  -System Modules Update  "
    exit 0
 fi
 sleep 1
