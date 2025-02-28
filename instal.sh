@@ -39,9 +39,9 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
 fi
 
 if [ $maintenance = "true" ]; then
-   echo "========================="
+   echo "========================"
    printer "  MAINTENANCE 1.6 BETA"
-   echo "========================="
+   echo "========================"
    printer "  [WHAT'S UPDATED]  "
    printer "  -New Function  "
    printer "  -Add New Code  "
