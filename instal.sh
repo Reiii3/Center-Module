@@ -37,6 +37,11 @@ if [ $maintenance = "true" ]; then
    echo "========================="
    printer "  MAINTENANCE 1.6 BETA"
    echo "========================="
+   printer " [WHAT'S UPDATED]"
+   printer " -New Function"
+   printer " -Add New Code"
+   printer " -Fix Logic Modules"
+   printer " -System Modules Update"
    exit 0
 fi
 sleep 1
