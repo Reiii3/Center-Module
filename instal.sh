@@ -79,77 +79,78 @@ if [ tes1 = "true" ]; then
 fi
 
 if [ tes2 = "true" ]; then 
- bin="/data/local/tmp/exogame"
-fun="https://reiii3.github.io/GVRSH/function/function.sh"
-onprop="https://reiii3.github.io/EXOGAME/bin/prop.sh"
-system="$bin/system_instaled"
-
-function="$bin/function"
-prop="$bin/prop"
-
-if [ ! -f $bin ]; then
-  mkdir -p "$bin"
+       bin="/data/local/tmp/exogame"
+      fun="https://reiii3.github.io/GVRSH/function/function.sh"
+      onprop="https://reiii3.github.io/EXOGAME/bin/prop.sh"
+      system="$bin/system_instaled"
+      
+      function="$bin/function"
+      prop="$bin/prop"
+      
+      if [ ! -f $bin ]; then
+        mkdir -p "$bin"
+      fi
+      
+      storm -rP "$bin" -s "${fun}" -fn "function" "$@"
+      sleep 1
+      storm -rP "$bin" -s "${onprop}" -fn "prop" "$@"
+      . $function
+      . $prop
+      
+      if [ -n "$1" ] && [ "$1" == "-g" ];then
+          axprop $prop nameGame -s "$2"
+          nameGame="$2"
+          shift 2
+          pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
+          axprop $path_axeronprop runPackage -s "$pkg"
+          runPackage="$pkg"
+      fi
+      if [ -n "$1" ] && [ "$1" == "-v" ];then
+          renderer="$2"
+          shift 
+      fi
+      
+      if [ $maintenance = "true" ]; then
+         echo "   ======================="
+         printer "     EXOGAME 1.0 BETA ON"
+         echo "   ======================="
+         printer "       [comming soon]"
+         echo
+         printer "[IN THE PROCESS OF MANUFACTURING]"
+         sleep 1
+         exit 0
+      fi
+        
+      echo "======================================"
+      printer "    Welcome To Modules EXOGAME VIP"
+      echo "======================================"
+      echo "        INFORMATION EXOGAME"
+      echo "  -Modules Version : "
+      echo "  -Base Version    : "
+      echo "  -Developer       : "
+      if [ -f $system ]; then
+         echo "  -Status : [Active]"
+      else 
+         echo "  -Status : [Non Active]"
+      fi
+      echo "  -Play Game : $nameGame"
+      echo "  -Package   : $runPackage"
+      echo "======================================"
+      
+      if [ ! -f $system ]; then 
+        echo "      ==============================="
+        echo "        [INSTALATION SYSTEM MODULES"
+        echo "                 [Active]"
+        echo "      ==============================="
+        echo "" > "$system"
+      fi
+      
+      echo "============================="
+      echo "  [PENYESUAIAN SYSTEM GAME]"
+      echo "============================="
+      echo "    [Ekstraking System]"
+      echo "  -[DRIVER GAME] : [Actived]"
+      echo "  -[SYSTEM COMPILER : [Succes]"
+      echo "  -[RENDER SELECTION ; ${renderer}"
+      echo "  -[COMING SOON]"
 fi
-
-storm -rP "$bin" -s "${fun}" -fn "function" "$@"
-sleep 1
-storm -rP "$bin" -s "${onprop}" -fn "prop" "$@"
-. $function
-. $prop
-
-if [ -n "$1" ] && [ "$1" == "-g" ];then
-    axprop $prop nameGame -s "$2"
-    nameGame="$2"
-    shift 2
-    pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
-    axprop $path_axeronprop runPackage -s "$pkg"
-    runPackage="$pkg"
-fi
-if [ -n "$1" ] && [ "$1" == "-v" ];then
-    renderer="$2"
-    shift 
-fi
-
-if [ $maintenance = "true" ]; then
-   echo "   ======================="
-   printer "     EXOGAME 1.0 BETA ON"
-   echo "   ======================="
-   printer "       [comming soon]"
-   echo
-   printer "[IN THE PROCESS OF MANUFACTURING]"
-   sleep 1
-   exit 0
-fi
-  
-echo "======================================"
-printer "    Welcome To Modules EXOGAME VIP"
-echo "======================================"
-echo "        INFORMATION EXOGAME"
-echo "  -Modules Version : "
-echo "  -Base Version    : "
-echo "  -Developer       : "
-if [ -f $system ]; then
-   echo "  -Status : [Active]"
-else 
-   echo "  -Status : [Non Active]"
-fi
-echo "  -Play Game : $nameGame"
-echo "  -Package   : $runPackage"
-echo "======================================"
-
-if [ ! -f $system ]; then 
-  echo "      ==============================="
-  echo "        [INSTALATION SYSTEM MODULES"
-  echo "                 [Active]"
-  echo "      ==============================="
-  echo "" > "$system"
-fi
-
-echo "============================="
-echo "  [PENYESUAIAN SYSTEM GAME]"
-echo "============================="
-echo "    [Ekstraking System]"
-echo "  -[DRIVER GAME] : [Actived]"
-echo "  -[SYSTEM COMPILER : [Succes]"
-echo "  -[RENDER SELECTION ; ${renderer}"
-echo "  -[COMING SOON]"
