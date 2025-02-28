@@ -57,9 +57,9 @@ fi
       printer "  -Base Version    : ${bversion} | ${bversionCode}"
       printer "  -Developer       : "
       if [ -f $system ]; then
-        printer "  -Status          : [Active]"
+        printer "  -Status          : Active"
       else 
-        printer "  -Status          : [Non Active]"
+        printer "  -Status          : Non Active"
       fi
       printer "  -Play Game       : $nameGame"
       echo "======================================"
