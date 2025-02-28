@@ -33,6 +33,10 @@ if [ -n "$1" ] && [ "$1" == "-g" ];then
     axprop $path_axeronprop runPackage -s "$pkg"
     runPackage="$pkg"
 fi
+if [ -n "$1" ] && [ "$1" == "-v" ];then
+    renderer="$2"
+    shift 
+fi
 
 if [ $maintenance = "true" ]; then
    echo "========================="
@@ -72,7 +76,11 @@ fi
       echo "  [PENYESUAIAN SYSTEM GAME]"
       echo "============================="
       echo "    [Ekstraking System]"
-      echo "  -[RENDER SELECTION : ${renderer}"
+      if [ -z $renderer ]; then
+       echo "  -[RENDERER SELECTION] : opengl"
+      else 
+       echo "  -[RENDER SELECTION : ${renderer}"
+      fi
       echo "  -[SYSTEM COMPILER  : [Succes]"
       echo "  -[DRIVER GAME]     : [Actived]"
       echo "  -[ADD NEW]         : [COMMING SOON]"
