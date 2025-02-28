@@ -60,7 +60,7 @@ fi
       echo "  -Play Game       : $nameGame"
       echo "======================================"
       
-      if [ ! -f $system ]; then 
+      if [ ! -f "$system" ]; then 
         echo "      ==============================="
         echo "        [INSTALATION SYSTEM MODULES"
         echo "                 [Active]"
