@@ -53,12 +53,11 @@ fi
       echo "  -Base Version    : ${bversion} | ${bversionCode}"
       echo "  -Developer       : "
       if [ -f $system ]; then
-         echo "  -Status : [Active]"
+        echo "  -Status          : [Active]"
       else 
-         echo "  -Status : [Non Active]"
+        echo "  -Status          : [Non Active]"
       fi
-      echo "  -Play Game : $nameGame"
-      echo "  -Package   : $runPackage"
+      echo "  -Play Game       : $nameGame"
       echo "======================================"
       
       if [ ! -f $system ]; then 
