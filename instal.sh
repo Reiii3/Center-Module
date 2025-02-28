@@ -32,6 +32,13 @@ if [ -n "$1" ] && [ "$1" == "-g" ];then
     axprop $path_axeronprop runPackage -s "$pkg"
     runPackage="$pkg"
 fi
+
+if [ $maintenance = "true" ]; then
+   echo "========================="
+   printer "  MAINTENANCE 1.6 BETA"
+   echo "========================="
+   exit 0
+fi
 sleep 1
 echo "============================================"
 printer "  Welcome To Testing Logika Module By Reii"
@@ -39,10 +46,10 @@ echo "============================================"
 responebin="$ckgm"
 printer "    [Module Version] : ${version} | ${verc}"
 printer "    [ Base Version ] : ${bversion} | ${bversionCode}"
-printer "    [   Developer  ] : ${author}"
-printer "    [   Play Game  ] : ${nameGame}"
-printer "    [    Package   ] : ${runPackage}"
-printer "    [    Update    ] : ${upt}"
+printer "    [ Developer    ] : ${author}"
+printer "    [ Play Game    ] : ${nameGame}"
+printer "    [ Package      ] : ${runPackage}"
+printer "    [ Update       ] : ${upt}"
 echo "============================================"
 echo
 sleep 0.5
