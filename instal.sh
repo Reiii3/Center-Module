@@ -76,9 +76,7 @@ if [ tes1 = "true" ]; then
        
       sleep 2
       exit 0
-fi
-
-if [ tes2 = "true" ]; then 
+elif [ tes2 = "true" ]; then 
        bin="/data/local/tmp/exogame"
       fun="https://reiii3.github.io/GVRSH/function/function.sh"
       onprop="https://reiii3.github.io/EXOGAME/bin/prop.sh"
