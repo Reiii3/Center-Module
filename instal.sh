@@ -81,7 +81,6 @@ elif [ tes2 = "true" ]; then
       fun="https://reiii3.github.io/GVRSH/function/function.sh"
       onprop="https://reiii3.github.io/EXOGAME/bin/prop.sh"
       system="$bin/system_instaled"
-      
       function="$bin/function"
       prop="$bin/prop"
       
