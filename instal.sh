@@ -11,6 +11,7 @@ ver="$bin/version"
 ckgm="$bin/cek_game"
 path_online="$bin/version"
 status_detec="$bin/game_status" 
+system="$bin/system_tes"
 if [ ! -f $bin ]; then
    mkdir -p "$bin"
 fi
@@ -44,86 +45,12 @@ if [ $maintenance = "true" ]; then
    printer "  -System Modules Update  "
    exit 0
 fi
-
-if [ tes1 = "true" ]; then
-    sleep 1
-    echo "============================================"
-    printer "  Welcome To Testing Logika Module By Reii"
-    echo "============================================"
-    responebin="$ckgm"
-    printer "    [Module Version] : ${version} | ${verc}"
-    printer "    [ Base Version ] : ${bversion} | ${bversionCode}"
-    printer "    [ Developer    ] : ${author}"
-    printer "    [ Play Game    ] : ${nameGame}"
-    printer "    [ Package      ] : ${runPackage}"
-    printer "    [ Update       ] : ${upt}"
-    echo "============================================"
-    echo
-    sleep 0.5
-       if [ -f $print ]; then
-         echo "File : ${print}  di temukan"
-         else
-         echo "File : ${print} tidak di temuka"
-      fi
-      
-       if [ -f $ckgm ]; then
-       echo "File : ${ckgm} di temukan"
-       else
-       echo "File : ${ckgm} tidak di temukan"
-       fi
-       echo
-      
-       
-      sleep 2
-      exit 0
-elif [ tes2 = "true" ]; then 
-       bin="/data/local/tmp/exogame"
-      fun="https://reiii3.github.io/GVRSH/function/function.sh"
-      onprop="https://reiii3.github.io/EXOGAME/bin/prop.sh"
-      system="$bin/system_instaled"
-      function="$bin/function"
-      prop="$bin/prop"
-      
-      if [ ! -f $bin ]; then
-        mkdir -p "$bin"
-      fi
-      
-      storm -rP "$bin" -s "${fun}" -fn "function" "$@"
-      sleep 1
-      storm -rP "$bin" -s "${onprop}" -fn "prop" "$@"
-      . $function
-      . $prop
-      
-      if [ -n "$1" ] && [ "$1" == "-g" ];then
-          axprop $prop nameGame -s "$2"
-          nameGame="$2"
-          shift 2
-          pkg=$(pm list packages | grep -i "$nameGame" | sed 's/package://g')
-          axprop $path_axeronprop runPackage -s "$pkg"
-          runPackage="$pkg"
-      fi
-      if [ -n "$1" ] && [ "$1" == "-v" ];then
-          renderer="$2"
-          shift 
-      fi
-      
-      if [ $maintenance = "true" ]; then
-         echo "   ======================="
-         printer "     EXOGAME 1.0 BETA ON"
-         echo "   ======================="
-         printer "       [comming soon]"
-         echo
-         printer "[IN THE PROCESS OF MANUFACTURING]"
-         sleep 1
-         exit 0
-      fi
-        
       echo "======================================"
       printer "    Welcome To Modules EXOGAME VIP"
       echo "======================================"
       echo "        INFORMATION EXOGAME"
-      echo "  -Modules Version : "
-      echo "  -Base Version    : "
+      echo "  -Modules Version : ${version} | ${verc}"
+      echo "  -Base Version    : ${bversion} | ${bversionCode}"
       echo "  -Developer       : "
       if [ -f $system ]; then
          echo "  -Status : [Active]"
