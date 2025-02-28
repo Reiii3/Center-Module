@@ -87,6 +87,6 @@ fi
        printer " -[RENDER SELECTION] : [${renderer}]"
        setprop debug.hwui.renderer $renderer
       fi
-      printer " -[SYSTEM COMPILER]  : [Succes]"
-      printer " -[DRIVER GAME]      : [Actived]"
-      printer " -[ADD NEW]          : [COMMING SOON]"
+      printer " -[SYSTEM COMPILER ]  : [Succes]"
+      printer " -[DRIVER GAME     ]  : [Active]"
+      printer " -[ADD NEW         ]  : [COMMING SOON]"
