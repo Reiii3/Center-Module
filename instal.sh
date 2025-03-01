@@ -54,21 +54,21 @@ fi
       echo "======================================"
       printer "    Welcome To Modules EXOGAME VIP"
       echo "======================================"
-      printer "${wr}        INFORMATION EXOGAME"
-      printer "${wr}  -Modules Version : ${version} | ${verc}${nwr}"
+      printer "        INFORMATION EXOGAME"
+      printer "  -Modules Version : ${version} | ${verc}"
       sleep 0.5
-      printer "${wr}  -Base Version    : ${bversion} | ${bversionCode}${nwr}"
+      printer "  -Base Version    : ${bversion} | ${bversionCode}"
       sleep 0.5
-      printer "${wr}  -Developer       : ${nwr}"
+      printer "  -Developer       : "
       sleep 0.5
       if [ -f $system ]; then
-        printer "${wr}  -Status          : Active${nwr}"
+        printer "  -Status          : Active"
         sleep 0.5
       else 
-        printer "${wr}  -Status          : Non Active${nwr}"
+        printer "  -Status          : Non Active"
         sleep 0.5
       fi
-      printer "${wr}  -Play Game       : $nameGame${nwr}"
+      printer "  -Play Game       : $nameGame"
       sleep 0.5
       echo "======================================"
       
