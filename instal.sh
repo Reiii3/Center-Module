@@ -12,6 +12,8 @@ ckgm="$bin/cek_game"
 path_online="$bin/version"
 status_detec="$bin/game_status" 
 system="$bin/system_tes"
+wr="\e[38;2;188;61;0m"
+nwr="\e[0m"
 if [ ! -f $bin ]; then
    mkdir -p "$bin"
 fi
