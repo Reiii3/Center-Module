@@ -56,21 +56,29 @@ fi
       echo "======================================"
       printer "${wr}        INFORMATION EXOGAME"
       printer "${wr}  -Modules Version : ${version} | ${verc}${nwr}"
+      sleep 0.5
       printer "${wr}  -Base Version    : ${bversion} | ${bversionCode}${nwr}"
+      sleep 0.5
       printer "${wr}  -Developer       : ${nwr}"
+      sleep 0.5
       if [ -f $system ]; then
         printer "${wr}  -Status          : Active${nwr}"
+        sleep 0.5
       else 
         printer "${wr}  -Status          : Non Active${nwr}"
+        sleep 0.5
       fi
       printer "${wr}  -Play Game       : $nameGame${nwr}"
+      sleep 0.5
       echo "======================================"
       
       if [ ! -f "$system" ]; then 
+        echo
         echo "      ==============================="
         printer "        [INSTALATION SYSTEM MODULES"
         printer "                 [Active]"
         echo "      ==============================="
+        echo
         echo "" > "$system"
        else 
         echo 
