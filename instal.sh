@@ -81,10 +81,10 @@ fi
       echo "============================="
       printer "    [Ekstraking System]"
       if [ -z $renderer ]; then
-       printer " -[RENDER SELECTION] : [opengl]"
+       printer " -[RENDER SELECTION]  : [opengl]"
        setprop debug.hwui.renderer opengl
       else 
-       printer " -[RENDER SELECTION] : [${renderer}]"
+       printer " -[RENDER SELECTION]  : [${renderer}]"
        setprop debug.hwui.renderer $renderer
       fi
       printer " -[SYSTEM COMPILER ]  : [Succes]"
