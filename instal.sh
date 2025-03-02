@@ -15,6 +15,7 @@ system="$bin/system_tes"
 update="$bin/update"
 wr="\e[38;2;188;61;0m"
 nwr="\e[0m"
+waktut="0304"
 if [ ! -f $bin ]; then
    mkdir -p "$bin"
 fi
@@ -41,13 +42,13 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
     shift 
 fi
 
-if [ "$waktu" = "$wakup" ]; then
+if [ "$waktut" = "$wakup" ]; then
     axprop "$path_online" maintenance -s "true"
     maintenance="true"
 fi
 
 if [ "${maintenance:-false}" = "true" ]; then
-  if [[ "$waktu" = "$waks" ]]; then
+  if [[ "$waktut" = "$waks" ]]; then
       echo "========================"
       printer "  MAINTENANCE 1.6 BETA"
       echo "========================"
