@@ -54,7 +54,7 @@ if [[ "$waktu" = "$wakup" || "$waktu" != "$waks" ]]; then
     printer "  - Add New Code  "
     printer "  - Fix Logic Modules  "
     printer "  - System Modules Update  "
-    echo "[Update akan selesai pada: ${waktu}]"
+    echo "[Update akan selesai pada: ${waks}]"
     exit 0
   fi
 else
