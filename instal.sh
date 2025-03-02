@@ -41,8 +41,8 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
     shift 
 fi
 
-if [ $maintenance = "true" ]; then
 if [ $waktu = $wakup || $waktu != $waks ]; then
+if [ $maintenance = "true" ]; then
   if [ ! -f $update ]; then
    echo "" > "$update"
   fi
@@ -57,6 +57,11 @@ if [ $waktu = $wakup || $waktu != $waks ]; then
    echo "[Update akan selesai pada: ${waktu}]"
    exit 0
 fi
+else
+axprop $path_online maintenance -s "false"
+maintenance="false"
+sleep 1
+rm $update
 fi
       echo "======================================"
       printer "    Welcome To Modules EXOGAME VIP"
