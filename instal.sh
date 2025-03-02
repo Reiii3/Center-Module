@@ -54,7 +54,7 @@ if [ $maintenance = "true" ]; then
    printer "  -Fix Logic Modules  "
    printer "  -System Modules Update  "
    exit 0
-  echo "[Update akan selesai pada: ${waktu}"
+  echo "[Update akan selesai pada: ${waktu}]"
 fi
       echo "======================================"
       printer "    Welcome To Modules EXOGAME VIP"
