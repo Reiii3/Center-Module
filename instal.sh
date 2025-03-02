@@ -42,27 +42,28 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
 fi
 
 if [[ "$waktu" = "$wakup" || "$waktu" != "$waks" ]]; then
-if [ $maintenance = "true" ]; then
-  if [ ! -f "$update" ]; then
-   echo "" > "$update"
+  if [ "${maintenance:-false}" = "true" ]; then
+    if [ ! -f "$update" ]; then
+      echo "" > "$update"
+    fi
+    echo "========================"
+    printer "  MAINTENANCE 1.6 BETA"
+    echo "========================"
+    printer "  [WHAT'S UPDATED]  "
+    printer "  - New Function  "
+    printer "  - Add New Code  "
+    printer "  - Fix Logic Modules  "
+    printer "  - System Modules Update  "
+    echo "[Update akan selesai pada: ${waktu}]"
+    exit 0
   fi
-   echo "========================"
-   printer "  MAINTENANCE 1.6 BETA"
-   echo "========================"
-   printer "  [WHAT'S UPDATED]  "
-   printer "  -New Function  "
-   printer "  -Add New Code  "
-   printer "  -Fix Logic Modules  "
-   printer "  -System Modules Update  "
-   echo "[Update akan selesai pada: ${waktu}]"
-   exit 0
-fi
 else
-axprop $path_online maintenance -s "false"
-maintenance="false"
-sleep 1
-rm $update
+  axprop "$path_online" maintenance -s "false"
+  maintenance="false"
+  sleep 1
+  if [ -n "$update" ]; then rm "$update"; fi
 fi
+
       echo "======================================"
       printer "    Welcome To Modules EXOGAME VIP"
       echo "======================================"
