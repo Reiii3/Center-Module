@@ -41,9 +41,9 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
     shift 
 fi
 
-if [ $waktu = $wakup || $waktu != $waks ]; then
+if [ "$waktu" = "$wakup" || "$waktu" != "$waks" ]; then
 if [ $maintenance = "true" ]; then
-  if [ ! -f $update ]; then
+  if [ ! -f "$update" ]; then
    echo "" > "$update"
   fi
    echo "========================"
