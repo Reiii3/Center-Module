@@ -12,6 +12,7 @@ ckgm="$bin/cek_game"
 path_online="$bin/version"
 status_detec="$bin/game_status" 
 system="$bin/system_tes"
+update="$bin/update"
 wr="\e[38;2;188;61;0m"
 nwr="\e[0m"
 if [ ! -f $bin ]; then
@@ -41,6 +42,8 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
 fi
 
 if [ $maintenance = "true" ]; then
+  if [ ! -f $update ]; then
+   
    echo "========================"
    printer "  MAINTENANCE 1.6 BETA"
    echo "========================"
