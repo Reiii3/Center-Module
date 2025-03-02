@@ -42,6 +42,7 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
 fi
 
 if [ $maintenance = "true" ]; then
+if [ $waktu = $wakup || $waktu != $waks ]; then
   if [ ! -f $update ]; then
    echo "" > "$update"
   fi
@@ -55,6 +56,7 @@ if [ $maintenance = "true" ]; then
    printer "  -System Modules Update  "
    echo "[Update akan selesai pada: ${waktu}]"
    exit 0
+fi
 fi
       echo "======================================"
       printer "    Welcome To Modules EXOGAME VIP"
