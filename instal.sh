@@ -42,7 +42,7 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
 fi
 
 if [ "$waktu" = "$wakup" ]; then
-    axprop "$path_online" maintenance -s "false"
+    axprop "$path_online" maintenance -s "true"
     maintenance="true"
 fi
 
@@ -59,10 +59,10 @@ if [ "${maintenance:-false}" = "true" ]; then
       echo "[Update akan selesai pada: ${waks}]"
       exit 0
   else
-    axprop "$path_online" maintenance -s "false"
-    maintenance="false"
-    sleep 1
-    if [ -n "$update" ]; then rm "$update"; fi
+      axprop "$path_online" maintenance -s "false"
+      maintenance="false"
+      sleep 1
+      if [ -n "$update" ]; then rm "$update"; fi
   fi
 fi
 
