@@ -41,27 +41,29 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
     shift 
 fi
 
-if [[ "$waktu" = "$wakup" || "$waktu" != "$waks" ]]; then
-  if [ "${maintenance:-false}" = "true" ]; then
-    if [ ! -f "$update" ]; then
-      echo "" > "$update"
-    fi
-    echo "========================"
-    printer "  MAINTENANCE 1.6 BETA"
-    echo "========================"
-    printer "  [WHAT'S UPDATED]  "
-    printer "  - New Function  "
-    printer "  - Add New Code  "
-    printer "  - Fix Logic Modules  "
-    printer "  - System Modules Update  "
-    echo "[Update akan selesai pada: ${waks}]"
-    exit 0
+if [ "$waktu" = "$wakup" ]; then
+    axprop "$path_online" maintenance -s "false"
+    maintenance="true"
+fi
+
+if [ "${maintenance:-false}" = "true" ]; then
+  if [[ "$waktu" != "$waks" ]]; then
+      echo "========================"
+      printer "  MAINTENANCE 1.6 BETA"
+      echo "========================"
+      printer "  [WHAT'S UPDATED]  "
+      printer "  - New Function  "
+      printer "  - Add New Code  "
+      printer "  - Fix Logic Modules  "
+      printer "  - System Modules Update  "
+      echo "[Update akan selesai pada: ${waks}]"
+      exit 0
+  else
+    axprop "$path_online" maintenance -s "false"
+    maintenance="false"
+    sleep 1
+    if [ -n "$update" ]; then rm "$update"; fi
   fi
-else
-  axprop "$path_online" maintenance -s "false"
-  maintenance="false"
-  sleep 1
-  if [ -n "$update" ]; then rm "$update"; fi
 fi
 
       echo "======================================"
