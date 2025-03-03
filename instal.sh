@@ -48,7 +48,7 @@ if [ "$waktut" = "$wakup" ]; then
 fi
 
 if [ "${maintenance:-false}" = "true" ]; then
-  if [[ "$waktut" -eg "$waks" ]]; then
+  if [ "$waktut" -eg "$wakup" ] && [ "$waktu" -le "$waks"then
       echo "========================"
       printer "  MAINTENANCE 1.6 BETA"
       echo "========================"
