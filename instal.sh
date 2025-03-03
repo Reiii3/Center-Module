@@ -3,8 +3,8 @@ import axeron.prop
 
 # Local System
 url="https://reiii3.github.io/GVRSH/function/function.sh"
-url2="https://reiii3.github.io/Tester-Moduler/bin/tes_cekgame.sh"
-url3="https://reiii3.github.io/Tester-Moduler/bin/ver.sh"
+url2="https://reiii3.github.io/Center-Module/bin/tes_cekgame.sh"
+url3="https://reiii3.github.io/Center-Module/bin/ver.sh"
 bin="/data/local/tmp/tes_fnc"
 print="$bin/fc"
 ver="$bin/version"
