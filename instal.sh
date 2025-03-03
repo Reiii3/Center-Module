@@ -42,13 +42,13 @@ if [ -n "$1" ] && [ "$1" == "-v" ];then
     shift 
 fi
 
-if [ "$waktut" = "$wakup" ]; then
+if [ "$waktu" = "$wakup" ]; then
     axprop "$path_online" maintenance -s "true"
     maintenance="true"
 fi
 
 if [ "${maintenance:-false}" = "true" ]; then
-  if [ "$waktut" -eg "$wakup" ] && [ "$waktu" -le "$waks" ]; then
+  if [ "$waktu" -ge "$wakup" ] && [ "$waktu" -le "$waks" ]; then
       echo "========================"
       printer "  MAINTENANCE 1.6 BETA"
       echo "========================"
