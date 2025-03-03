@@ -57,7 +57,7 @@ if [ "$maintenance" = "true" ]; then
       printer "  - Add New Code  "
       printer "  - Fix Logic Modules  "
       printer "  - System Modules Update  "
-      echo "[Update akan selesai pada: ${waks}]"
+      echo "[Update akan selesai pada: ${wake}]"
       exit 0
   else
       axprop "$path_online" maintenance -s "false"
