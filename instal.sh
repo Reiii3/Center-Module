@@ -46,8 +46,8 @@ if [ "$waktu" = "$wakup" ]; then
     axprop "$path_online" maintenance -s "true"
     maintenance="true"
 fi
-
-if [ "${maintenance:-false}" = "true" ]; then
+sleep 0.5 
+if [ "$maintenance" = "true" ]; then
   if [ "$waktu" -ge "$wakup" ] && [ "$waktu" -le "$waks" ]; then
       echo "========================"
       printer "  MAINTENANCE 1.6 BETA"
