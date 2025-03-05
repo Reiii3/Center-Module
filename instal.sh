@@ -62,11 +62,11 @@ if [ "$maintenance" = "true" ]; then
   else
       axprop "$path_online" maintenance -s "false"
       maintenance="false"
-      axprop "$path_online" wakup -s "0304"
+      axprop "$path_online" wakup -s "0307"
       wakup="0307"
-      axprop "$path_online" waks -s "0304"
+      axprop "$path_online" waks -s "0308"
       waks="0308"
-      axprop "$path_online" wake -s "0305"
+      axprop "$path_online" wake -s "03-09"
       wake="03-09"
       sleep 1
       if [ -n "$update" ]; then rm "$update"; fi
