@@ -69,7 +69,6 @@ if [ "$maintenance" = "true" ]; then
       axprop "$path_online" wake -s "03-09"
       wake="03-09"
       sleep 1
-      if [ -n "$update" ]; then rm "$update"; fi
   fi
 fi
 
