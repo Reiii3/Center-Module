@@ -1,3 +1,7 @@
+if [ "$(basename "$0")" != "Tes" ]; then
+        exit 1
+fi
+
 IDLE_TIME=60  # Awalnya cek setiap 60 detik jika tidak ada game
 flaunch $runPackage
 sleep 1
