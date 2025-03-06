@@ -27,7 +27,7 @@ CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /
             rm $inst
           fi
             echo "Tidak ada game yang berjalan"
-            cmd notification post -S bigtext -t "Game closed" "game_log" "Game sedang dimainkan: $CURRENT_APP"
+            cmd notification post -S bigtext -t "Game closed"
             sleep 0.5
           if [ ! -f $rmvt ]; then
           am broadcast -a axeron.show.TOAST --es title "AI Auto Renderer" --es msg "Render Selection : opengl" --ei duration "3000"
