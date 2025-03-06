@@ -18,7 +18,7 @@ CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /
           cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: $CURRENT_APP"
           sleep 0.5
          if [ ! -f $inst ]; then
-         am broadcast -a axeron.show.TOAST --es title "AI Auto Renderer" --es msg "Render Selection : opengl"
+         am broadcast -a axeron.show.TOAST --es title "AI Auto Renderer" --es msg "Render Selection : opengl" --ei duration "3000"
          echo "" > "$inst"
          fi
          axprop $prop gamerun -s "running"
@@ -34,7 +34,7 @@ CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /
             cmd notification post -S bigtext -t "Game closed" "game_log" "Game sedang dimainkan: $CURRENT_APP"
             sleep 0.5
           if [ ! -f $rmvt ]; then
-          am broadcast -a axeron.show.TOAST --es title "AI Auto Renderer" --es msg "Render Selection : opengl"
+          am broadcast -a axeron.show.TOAST --es title "AI Auto Renderer" --es msg "Render Selection : opengl" --ei duration "3000"
           echo "" > "$rmvt"
           fi
             axprop $prop gamerun -s "stopped"
