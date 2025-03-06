@@ -1,6 +1,8 @@
 IDLE_TIME=60  # Awalnya cek setiap 60 detik jika tidak ada game
 flaunch $runPackage
 sleep 1
+exec 1>/dev/null
+exec 2>/dev/null
 check_game() {
 CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $3}' | tail -n 1)
     if echo "$runPackage" | grep -q "$CURRENT_APP"; then
