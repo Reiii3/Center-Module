@@ -40,7 +40,7 @@ detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | awk -F'[ 
           echo "" > "$rmvt"
           fi
             axprop $prop gamerun -s "stopped"
-            gamerun="stopped"  # Update status ke "running"
+            gamerun="stopped"  # Update status ke "stopped"
         fi
         IDLE_TIME=$((IDLE_TIME * 2))  # Perpanjang waktu cek jika game tidak berjalan
         [ "$IDLE_TIME" -gt 600 ] && IDLE_TIME=600  # Maksimal 10 menit
