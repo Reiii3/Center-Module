@@ -2,8 +2,8 @@ if [ "$(basename "$0")" != "Tes" ]; then
         exit 1
 fi
 bin1="/data/local/tmp/tes_fnc"
-rmvt="$bin/toastr"
-inst="$bin/toastins"
+rmvt="$bin1/toastr"
+inst="$bin1/toastins"
 IDLE_TIME=60  # Awalnya cek setiap 60 detik jika tidak ada game
 check_game() {
 CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $3}' | tail -n 1)
