@@ -5,6 +5,7 @@ fi
 bin1="/data/local/tmp/tes_fnc"
 rmvt="$bin1/toastr"
 inst="$bin1/toastins"
+gamerun="none"
 IDLE_TIME=60  
 
 check_game() {
@@ -25,8 +26,6 @@ check_game() {
                     echo "" > "$inst"
                 fi
             fi
-
-            axprop $prop gamerun -s "running"
             gamerun="running"
         fi
         IDLE_TIME=3  
@@ -42,8 +41,6 @@ check_game() {
                 am broadcast -a axeron.show.TOAST --es title "AI Auto Renderer" --es msg "Render Selection : opengl" --ei duration "3000"
                 echo "" > "$rmvt"
             fi
-
-            axprop $prop gamerun -s "stopped"
             gamerun="stopped"
         fi
         IDLE_TIME=$((IDLE_TIME * 2))
