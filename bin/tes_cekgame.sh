@@ -25,7 +25,7 @@ detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | awk -F'[ 
          axprop $prop gamerun -s "running"
          gamerun="running"  # Update status ke "running"
         fi
-        IDLE_TIME=2  # Saat game dimainkan, cek cepat setiap 2 detik
+        IDLE_TIME=3  # Saat game dimainkan, cek cepat setiap 3 detik
     else
         if [ "ganerun" != "stopped" ]; then
           if [ -f $inst ]; then
