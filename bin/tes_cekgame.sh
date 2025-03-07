@@ -6,12 +6,13 @@ rmvt="$bin1/toastr"
 inst="$bin1/toastins"
 IDLE_TIME=60  # Awalnya cek setiap 60 detik jika tidak ada game
 check_game() {
-CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $3}' | tail -n 1)
-    if echo "$runPackage" | grep -qw "$CURRENT_APP"; then
+detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $5}' | tail -n 1)
+    if [ -n "$CURRENT_APP" ]; then
         if [ "$gamerun" != "running" ]; then
          if [ -f $rmvt ]; then
            rm $rmvt
          fi
+          if [ "$runPackage" = "$detected_apps"]; then
           echo "Game sedang dimainkan: $CURRENT_APP"
           run='cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: $CURRENT_APP"'
           eval "$run"
@@ -20,6 +21,7 @@ CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /
          am broadcast -a axeron.show.TOAST --es title "AI Auto Renderer" --es msg "Render Selection : opengl" --ei duration "3000"
          echo "" > "$inst"
          fi
+          fi
          axprop $prop gamerun -s "running"
          gamerun="running"  # Update status ke "running"
         fi
