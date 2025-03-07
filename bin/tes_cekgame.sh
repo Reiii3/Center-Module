@@ -5,7 +5,7 @@ fi
 IDLE_TIME=60  # Awalnya cek setiap 60 detik jika tidak ada game
 check_game() {
 CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $3}' | tail -n 1)
-    if echo "$runPackage" | grep -q "$CURRENT_APP"; then
+     if echo "$runPackage" | grep -qw "$CURRENT_APP"; then
         if [ "$gamerun" != "running" ]; then
          if [ -f $rmvt ]; then
            rm $rmvt
@@ -27,7 +27,7 @@ CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /
             rm $inst
           fi
             echo "Tidak ada game yang berjalan"
-            cmd notification post -S bigtext -t "Game closed"
+            cmd notification post -S bigtext -t "Game closed" "game_log" "Tidak ada game yang berjalan"
             sleep 0.5
           if [ ! -f $rmvt ]; then
           am broadcast -a axeron.show.TOAST --es title "AI Auto Renderer" --es msg "Render Selection : opengl" --ei duration "3000"
