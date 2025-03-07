@@ -22,7 +22,7 @@ CURRENT_APP=$(dumpsys window | grep -Eo 'mCurrentFocus|mFocusedApp' | awk -F'[ /
         fi
         IDLE_TIME=2  # Saat game dimainkan, cek cepat setiap 2 detik
     else
-        if [ "$LAST_LOG" != "stopped" ]; then
+        if [ "ganerun" != "stopped" ]; then
           if [ -f $inst ]; then
             rm $inst
           fi
