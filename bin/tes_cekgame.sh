@@ -2,9 +2,8 @@ if [ "$(basename "$0")" != "Tes" ]; then
     exit 1
 fi
 
-bin1="/data/local/tmp/tes_fnc"
-rmvt="$bin1/toastr"
-inst="$bin1/toastins"
+bin1="/data/local/tmp/tes_ai"
+
 gamerun="none"
 IDLE_TIME=7.5
 
