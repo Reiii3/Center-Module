@@ -8,6 +8,7 @@ IDLE_TIME=7.5
 engine="/data/local/tmp/tes_ai/engine"
 gamerun=""
 notif_run=""
+runtes="com.mojang.minecraftpe"
 
 axprop $engine render -s "jaya"
 render="jaya"
@@ -24,7 +25,7 @@ check_game() {
 
     if [ -n "$detected_apps" ]; then
         if [ "$gamerun" != "running" ]; then
-            if [ "$packageRun" = "$detected_apps" ]; then
+            if [ "$runtes" = "$detected_apps" ]; then
                 echo "Game sedang dimainkan: $detected_apps"
                 if [ "$notif_run" != "run" ]; then
                     run='cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: '"$detected_apps"'"'
