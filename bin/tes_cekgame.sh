@@ -3,7 +3,6 @@ if [ "$(basename "$0")" != "Tes" ]; then
 fi
 
 bin1="/data/local/tmp/tes_ai"
-
 gamerun="none"
 IDLE_TIME=7.5
 
