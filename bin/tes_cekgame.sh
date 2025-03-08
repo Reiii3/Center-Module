@@ -21,6 +21,7 @@ render_detected=$(getprop )
                 if [ $notif_run != "run" ]; then
                   run='cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: '"$detected_apps"'"'
                   eval "$run"
+                  notif_tun="run"
                 fi
             fi
             sleep 0.5
@@ -33,6 +34,7 @@ render_detected=$(getprop )
               if [ $notif_run != "stop" ]; then
                 stop='cmd notification post -S bigtext -t "Game closed" "game_log" "Tidak ada game yang berjalan"'
                 eval "$stop"
+                notif_run="stop"
               fi
             sleep 0.5
             gamerun="stopped"
