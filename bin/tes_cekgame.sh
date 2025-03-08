@@ -4,6 +4,9 @@ fi
 
 IDLE_TIME=7.5
 engine="/data/local/tmp/tes_ai/engine"
+gamerun=""
+notif_run=""
+
 ai_start() {
  setptop debug.hwui.renderer skiavk 
 }
