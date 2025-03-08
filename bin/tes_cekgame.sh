@@ -2,14 +2,12 @@ if [ "$(basename "$0")" != "ai_tes" ]; then
     exit 1
 fi
 
-bin1="/data/local/tmp/tes_ai"
-gamerun="none"
 IDLE_TIME=7.5
-
+engine="/data/local/tmp/tes_ai/engine"
 ai_start() {
  setptop debug.hwui.renderer skiavk 
 }
-
+. $engine
 check_game() {
 detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $5}' | tail -n 1)
 render_detected+$(getprop )
