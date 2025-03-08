@@ -2,6 +2,8 @@ if [ "$(basename "$0")" != "ai_tes" ]; then
     exit 1
 fi
 
+$AXFUN
+import axeron.prop
 IDLE_TIME=7.5
 engine="/data/local/tmp/tes_ai/engine"
 gamerun=""
