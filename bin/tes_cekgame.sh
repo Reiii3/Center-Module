@@ -13,7 +13,7 @@ ai_start() {
 . $engine
 check_game() {
 detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $5}' | tail -n 1)
-render_detected+$(getprop )
+render_detected=$(getprop )
     if [ -n "$detected_apps" ]; then
         if [ "$gamerun" != "running" ]; then
             if [ "$runPackage" = "$detected_apps" ]; then
