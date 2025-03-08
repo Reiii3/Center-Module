@@ -1,4 +1,4 @@
-if [ "$(basename "$0")" != "Tes" ]; then
+if [ "$(basename "$0")" != "ai_tes" ]; then
     exit 1
 fi
 
