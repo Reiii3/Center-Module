@@ -9,6 +9,9 @@ engine="/data/local/tmp/tes_ai/engine"
 gamerun=""
 notif_run=""
 
+axprop $engine render -s "jaya"
+render="jaya"
+
 ai_start() {
     setprop debug.hwui.renderer skiavk 
 }
