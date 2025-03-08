@@ -29,7 +29,6 @@ check_game() {
             fi
             sleep 0.5
             gamerun="running"
-            notif_run=""  # Reset supaya bisa berubah lagi
         fi
         IDLE_TIME=5 
     else
@@ -42,7 +41,6 @@ check_game() {
             fi
             sleep 0.5
             gamerun="stopped"
-            notif_run=""  # Reset supaya bisa berubah lagi
         fi
         IDLE_TIME=7.5 
     fi
