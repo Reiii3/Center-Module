@@ -19,6 +19,9 @@ ai_start() {
 
 . $engine
 
+cmd='cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: '"tester"'"'
+eval "$cmd"
+ 
 check_game() {
     detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $5}' | tail -n 1)
     render_detected=$(getprop debug.hwui.renderer)
