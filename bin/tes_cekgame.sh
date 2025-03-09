@@ -1,6 +1,4 @@
-if [ "$(basename "$0")" != "ai_tes" ]; then
-    exit 1
-fi
+
 
 $AXFUN
 import axeron.prop
