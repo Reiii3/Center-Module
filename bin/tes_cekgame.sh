@@ -30,7 +30,7 @@ ai_end() {
 cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: tester"
 
 check_game() {
-detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -o "$runtes")
+detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -o "$runPackage")
 render_detected=$(getprop debug.hwui.renderer)
     if [ -n "$detected_apps" ]; then
         if [ "$gamerun" != "running" ] || [ "$render_detected" != "skiavk" ]; then
