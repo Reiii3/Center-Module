@@ -25,7 +25,7 @@ cmd='cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang
 eval "$cmd"
  
 check_game() {
-detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo "$runtes")
+detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -o "$runtes")
 render_detected=$(getprop debug.hwui.renderer)
     if [ -n "$detected_apps" ]; then
         if [ "$gamerun" != "running" ]; then
