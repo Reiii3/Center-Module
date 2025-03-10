@@ -1,7 +1,7 @@
 $AXFUN
 import axeron.prop
 IDLE_TIME=5
-engine="/data/local/tmp/tes_ai/engine"
+engine="/data/local/tmp/engine"
 gamerun=""
 notif_run=""
 runtes="com.mojang.minecraftpe"
@@ -30,7 +30,7 @@ ai_end() {
 cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: tester"
 
 check_game() {
-detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -o "$runPackage")
+detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -o "$packageRun")
 render_detected=$(getprop debug.hwui.renderer)
     if [ -n "$detected_apps" ]; then
         if [ "$gamerun" != "running" ] || [ "$render_detected" != "skiavk" ]; then
