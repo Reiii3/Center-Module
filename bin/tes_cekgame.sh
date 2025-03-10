@@ -1,8 +1,6 @@
-
-
 $AXFUN
 import axeron.prop
-IDLE_TIME=7.5
+IDLE_TIME=5
 engine="/data/local/tmp/tes_ai/engine"
 gamerun=""
 notif_run=""
@@ -21,9 +19,8 @@ cmd='cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang
 eval "$cmd"
  
 check_game() {
-    detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | awk -F'[ /}]' '{print $5}' | tail -n 1)
-    render_detected=$(getprop debug.hwui.renderer)
-
+detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo "$runtes")
+render_detected=$(getprop debug.hwui.renderer)
     if [ -n "$detected_apps" ]; then
         if [ "$gamerun" != "running" ]; then
             if [ "$runtes" = "$detected_apps" ]; then
@@ -37,7 +34,7 @@ check_game() {
             sleep 0.5
             gamerun="running"
         fi
-        IDLE_TIME=5 
+        IDLE_TIME=3
     else
         if [ "$gamerun" != "stopped" ]; then
             echo "Tidak ada game yang berjalan"
@@ -49,11 +46,13 @@ check_game() {
             sleep 0.5
             gamerun="stopped"
         fi
-        IDLE_TIME=7.5 
+        IDLE_TIME=5
     fi
 }
 
 while true; do
+    echo "loop berhasil di jalankan"
     check_game
+    echo "dan loop akan berulang setiap ${IDLE_TIME} sekali"
     sleep "$IDLE_TIME"
 done
