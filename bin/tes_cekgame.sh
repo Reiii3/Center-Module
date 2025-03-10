@@ -51,8 +51,10 @@ render_detected=$(getprop debug.hwui.renderer)
 }
 
 while true; do
+    echo 
     echo "loop berhasil di jalankan"
     check_game
     echo "dan loop akan berulang setiap ${IDLE_TIME} sekali"
+    echo
     sleep "$IDLE_TIME"
 done
