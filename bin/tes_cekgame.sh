@@ -10,6 +10,8 @@ axprop $engine render -s "jaya"
 render="jaya"
 
 ai_start() {
+    cmd settings put system high_performance_mode_on 0
+    sleep 0.5
     setprop debug.hwui.renderer skiavk 
     cmd settings put system high_performance_mode_on 1
     cmd settings put system high_performance_mode_on_when_shutdown 1
@@ -18,6 +20,7 @@ ai_end() {
     setprop debug.hwui.renderer opengl
     cmd settings put system high_performance_mode_on 0
     cmd settings put system high_performance_mode_on_when_shutdown 0
+    sleep 1
 }
 . $engine
 
