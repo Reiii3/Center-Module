@@ -26,7 +26,6 @@ ai_end() {
 }
 
 . $engine
-. $engine_ts
 
 cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: tester"
 
