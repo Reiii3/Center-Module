@@ -2,9 +2,9 @@ $AXFUN
 import axeron.prop
 IDLE_TIME=5
 engine="/data/local/tmp/engine"
+engine_ts="/data/local/tmp/tes_ai/engine"
 gamerun=""
 notif_run=""
-runtes="com.mojang.minecraftpe"
 
 axprop $engine render -s "jaya"
 render="jaya"
@@ -26,6 +26,7 @@ ai_end() {
 }
 
 . $engine
+. $engine_ts
 
 cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: tester"
 
@@ -71,6 +72,7 @@ while true; do
     echo "Loop berhasil dijalankan"
     check_game
     echo "Loop akan berulang setiap ${IDLE_TIME} detik"
+    echo "Testing Folder tmp : $pid_ins"
     echo
     sleep "$IDLE_TIME"
 done
