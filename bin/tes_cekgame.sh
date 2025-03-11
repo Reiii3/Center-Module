@@ -73,6 +73,7 @@ while true; do
     check_game
     echo "Loop akan berulang setiap ${IDLE_TIME} detik"
     echo "Testing Folder tmp : $pid_ins"
+    echo "Testing None Tmp : $pid_ins"
     echo
     sleep "$IDLE_TIME"
 done
