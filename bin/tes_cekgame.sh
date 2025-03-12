@@ -27,7 +27,7 @@ ai_end() {
 
 . $engine
 
-cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: tester"
+cmd notification post -S bigtext -t "AI FOXVER" "tag" "ACTIVED AI FOXVER | Developer : ReiiEja"
 
 check_game() {
 detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -o "$packageRun")
@@ -38,7 +38,7 @@ render_detected=$(getprop debug.hwui.renderer)
             gamerun="running"
         fi
         if [ "$notif_run" != "run" ]; then
-            cmd notification post -S bigtext -t "Game Detected" "game_log" "Game sedang dimainkan: $detected_apps"
+            cmd notification post -S bigtext -t "FOXVER AI" "game_log" "AI GAME RUNNING : $(pkglist -L $detected_apps) | Actived Performance"
             notif_run="run"
         fi
         echo
@@ -54,7 +54,7 @@ render_detected=$(getprop debug.hwui.renderer)
         fi
 
         if [ "$notif_run" != "stop" ]; then
-            cmd notification post -S bigtext -t "Game closed" "game_log" "Tidak ada game yang berjalan"
+            cmd notification post -S bigtext -t "FOXVER AI" "game_log" "AI GAME CLOSED | Deactived Performance"
             notif_run="stop"
         fi
         echo
