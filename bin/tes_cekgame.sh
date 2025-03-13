@@ -28,7 +28,7 @@ ai_end() {
 . $engine
 
 cmd notification post -S bigtext -t "AI FOXVER" "tag" "ACTIVED AI FOXVER | Developer : ReiiEja"
-
+sleep 1
 check_game() {
 detected_apps=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -o "$packageRun")
 render_detected=$(getprop debug.hwui.renderer)
