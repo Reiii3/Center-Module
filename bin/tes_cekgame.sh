@@ -71,8 +71,8 @@ while true; do
     echo "Loop berhasil dijalankan"
     check_game
     echo "Loop akan berulang setiap ${IDLE_TIME} detik"
-    echo "Testing Folder tmp : $pid_ins"
-    echo "Testing None Tmp : $pid_ins"
+    echo "status noti : $notif_run"
+    echo "status game : $gamerun"
     echo
     sleep "$IDLE_TIME"
 done
