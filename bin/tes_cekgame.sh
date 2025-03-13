@@ -2,7 +2,7 @@ $AXFUN
 import axeron.prop
 IDLE_TIME=5
 engine="/data/local/tmp/engine"
-engine_ts="/data/local/tmp/tes_ai/engine"
+engine_ts="/data/local/tmp/tes_fnc/version"
 gamerun=""
 notif_run=""
 
@@ -26,7 +26,7 @@ ai_end() {
 }
 
 . $engine
-
+. $engine_ts
 cmd notification post -S bigtext -t "AI FOXVER" "tag" "ACTIVED AI FOXVER | Developer : ReiiEja"
 sleep 1
 check_game() {
@@ -38,7 +38,7 @@ render_detected=$(getprop debug.hwui.renderer)
             gamerun="running"
         fi
         if [ "$notif_run" != "run" ]; then
-            cmd notification post -S bigtext -t "FOXVER AI" "game_log" "AI GAME RUNNING : $(pkglist -L $detected_apps) | Actived Performance"
+            cmd notification post -S bigtext -t "FOXVER AI" "game_log" "AI GAME RUNNING : $nameGame | Actived Performance"
             notif_run="run"
         fi
         echo
