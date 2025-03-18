@@ -3,14 +3,25 @@ waktuD=$(date "+%d")
 waktuM=$(date "+%m")
 
 printer() {
-text="$1"
+case $# in
+     1)
+       text="$1"
+       co=""
+       nc=""
+     ;;
+     3)
+       text="$2"
+       co="$1"
+       nc="$3"
+      ;;
+esac
  i=0
    while [ $i -lt ${#text} ]; do
-     echo -en "${text:$i:1}"
- sleep 0.02
-   i=$((i + 1))
- done
-echo
+     echo -en "${co}${text:$i:1}${nc}"
+     sleep 0.02
+     i=$((i + 1))
+   done
+ echo
 }
 
 fle_ins() {
