@@ -1,3 +1,3 @@
 {
-  foxUpdate=true
+  foxUpdate=false
 }
