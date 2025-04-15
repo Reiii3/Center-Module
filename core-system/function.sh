@@ -1,6 +1,7 @@
 waktu=$(date "+%m%d")
 waktuD=$(date "+%d")
 waktuM=$(date "+%m")
+time=$(date "+%a %b %d %Y %H:%M %Z")
 
 printer() {
 text="$1"
