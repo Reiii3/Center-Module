@@ -1,3 +1,3 @@
 {
-  noxUpdate=false
+  noxUpdate=true
 }
