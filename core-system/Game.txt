@@ -57,6 +57,7 @@ com.gabama.monopostolite
 com.gameloft.android.ANMP.GloftA9HM
 com.gameloft.android.ANMP.GloftMVHM
 com.garena.game.codm
+com.garena.game.df
 com.garena.game.kgid
 com.garena.game.kgtw
 com.garena.game.kgvn
