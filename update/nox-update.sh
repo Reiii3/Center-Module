@@ -1,4 +1,5 @@
 {
   noxUpdate=true
-  info="versi 1.3.0-beta akan segera siap, dengan kode engine NXV130B masih dalam proses..."
+  info="versi 1.3.0-beta akan segera siap, dengan kode engine NXV130B masih dalam proses...
+  kemungkinan update akan selesai pafa 20.00 WIB"
 }
